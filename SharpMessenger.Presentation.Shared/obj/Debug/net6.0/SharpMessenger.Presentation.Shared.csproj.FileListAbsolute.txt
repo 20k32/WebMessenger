@@ -1,0 +1,12 @@
+C:\Users\egorm\source\repos\SharpMessenger\SharpMessenger.Presentation.Shared\bin\Debug\net6.0\SharpMessenger.Presentation.Shared.deps.json
+C:\Users\egorm\source\repos\SharpMessenger\SharpMessenger.Presentation.Shared\bin\Debug\net6.0\SharpMessenger.Presentation.Shared.dll
+C:\Users\egorm\source\repos\SharpMessenger\SharpMessenger.Presentation.Shared\bin\Debug\net6.0\SharpMessenger.Presentation.Shared.pdb
+C:\Users\egorm\source\repos\SharpMessenger\SharpMessenger.Presentation.Shared\obj\Debug\net6.0\SharpMessenger.Presentation.Shared.csproj.AssemblyReference.cache
+C:\Users\egorm\source\repos\SharpMessenger\SharpMessenger.Presentation.Shared\obj\Debug\net6.0\SharpMessenger.Presentation.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\egorm\source\repos\SharpMessenger\SharpMessenger.Presentation.Shared\obj\Debug\net6.0\SharpMessenger.Presentation.Shared.AssemblyInfoInputs.cache
+C:\Users\egorm\source\repos\SharpMessenger\SharpMessenger.Presentation.Shared\obj\Debug\net6.0\SharpMessenger.Presentation.Shared.AssemblyInfo.cs
+C:\Users\egorm\source\repos\SharpMessenger\SharpMessenger.Presentation.Shared\obj\Debug\net6.0\SharpMessenger.Presentation.Shared.csproj.CoreCompileInputs.cache
+C:\Users\egorm\source\repos\SharpMessenger\SharpMessenger.Presentation.Shared\obj\Debug\net6.0\SharpMessenger.Presentation.Shared.dll
+C:\Users\egorm\source\repos\SharpMessenger\SharpMessenger.Presentation.Shared\obj\Debug\net6.0\refint\SharpMessenger.Presentation.Shared.dll
+C:\Users\egorm\source\repos\SharpMessenger\SharpMessenger.Presentation.Shared\obj\Debug\net6.0\SharpMessenger.Presentation.Shared.pdb
+C:\Users\egorm\source\repos\SharpMessenger\SharpMessenger.Presentation.Shared\obj\Debug\net6.0\ref\SharpMessenger.Presentation.Shared.dll

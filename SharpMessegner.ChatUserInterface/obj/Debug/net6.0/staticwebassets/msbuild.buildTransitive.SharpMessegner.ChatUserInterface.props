@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\SharpMessegner.ChatUserInterface.props" />
+</Project>

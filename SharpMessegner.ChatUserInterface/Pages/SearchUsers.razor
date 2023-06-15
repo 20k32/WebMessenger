@@ -1,0 +1,35 @@
+﻿@page "/SearchUsers"
+
+@inherits SearchUsersBase;
+
+@using SharpMessegner.ChatUserInterface.UIModels
+@using SharpMessenger.Application.UiModels;
+
+<div class="row">
+    <div class="col pt-4 pb-4 border">
+        <div class="mb-3">
+            <input @bind-value="@SearchOptions" type="text" class="form-control" placeholder="@@nickname" />
+        </div>
+        <div class="mb-3 d-grid gap-2">
+            <button class="btn btn-primary" @onclick="OnSearchButtonClick">Search</button>
+        </div>
+        <div style="overflow-y:scroll; max-height:400px;">
+            <table class="table text-center" style="max-width:300px; margin: 0px auto;">
+                <tbody>
+                    @foreach (SearchedItemModel item in SearchedData)
+                    {
+                        <tr>
+                            <th scope="row">@item.UserData.UserName</th>
+                            <th>
+                                <button class="@item.Button.ButtonClass"
+                                @onclick="@(() => OnAddDeleteButtonClick(item))">
+                                    @item.Button.ButtonName
+                                </button>
+                            </th>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

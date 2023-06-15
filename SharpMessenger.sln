@@ -1,0 +1,77 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33717.318
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{1F2904EF-7ECD-4ECC-A85F-6CC3EB776F04}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{2D408D0B-1829-4555-886F-8C02B9D7A54D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{55D4BF67-3A97-4D3A-A5E8-6AD39247DEDA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{BF7AAE7D-345F-4051-952C-F3A0645BFF4B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharpMessenger.Domain", "SharpMessenger.Domain\SharpMessenger.Domain.csproj", "{66EC47C3-248D-45E1-9CB2-0CE53ABCE1E5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharpMessenger.Application", "SharpMessenger.Application\SharpMessenger.Application.csproj", "{7BD1BCBD-30A2-4347-A9A2-8227584CB819}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharpMessenger.DbInteraction", "SharpMessenger.DbInteraction\SharpMessenger.DbInteraction.csproj", "{A91B076C-4E7C-4637-AA07-DC7B359A5BD0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{EF5D493D-9FA9-4D4C-B702-E683CA1118F2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{1277527F-3518-43AD-8A59-04FB386735F7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharpMessenger.UsersApi", "SharpMessenger.UsersApi\SharpMessenger.UsersApi.csproj", "{4ED29B2D-6F0A-42D1-8CD0-580C41F20612}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharpMessegner.ChatUserInterface", "SharpMessegner.ChatUserInterface\SharpMessegner.ChatUserInterface.csproj", "{6B47823C-E0F2-4DC2-8A85-EC8C8AABBAFE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharpMessenger.Presentation.Shared", "SharpMessenger.Presentation.Shared\SharpMessenger.Presentation.Shared.csproj", "{E4ADDD9C-FFFC-4016-808A-2B765535545A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{66EC47C3-248D-45E1-9CB2-0CE53ABCE1E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66EC47C3-248D-45E1-9CB2-0CE53ABCE1E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66EC47C3-248D-45E1-9CB2-0CE53ABCE1E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66EC47C3-248D-45E1-9CB2-0CE53ABCE1E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BD1BCBD-30A2-4347-A9A2-8227584CB819}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BD1BCBD-30A2-4347-A9A2-8227584CB819}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BD1BCBD-30A2-4347-A9A2-8227584CB819}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BD1BCBD-30A2-4347-A9A2-8227584CB819}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A91B076C-4E7C-4637-AA07-DC7B359A5BD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A91B076C-4E7C-4637-AA07-DC7B359A5BD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A91B076C-4E7C-4637-AA07-DC7B359A5BD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A91B076C-4E7C-4637-AA07-DC7B359A5BD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4ED29B2D-6F0A-42D1-8CD0-580C41F20612}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4ED29B2D-6F0A-42D1-8CD0-580C41F20612}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4ED29B2D-6F0A-42D1-8CD0-580C41F20612}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4ED29B2D-6F0A-42D1-8CD0-580C41F20612}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B47823C-E0F2-4DC2-8A85-EC8C8AABBAFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B47823C-E0F2-4DC2-8A85-EC8C8AABBAFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B47823C-E0F2-4DC2-8A85-EC8C8AABBAFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B47823C-E0F2-4DC2-8A85-EC8C8AABBAFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4ADDD9C-FFFC-4016-808A-2B765535545A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4ADDD9C-FFFC-4016-808A-2B765535545A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4ADDD9C-FFFC-4016-808A-2B765535545A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4ADDD9C-FFFC-4016-808A-2B765535545A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{66EC47C3-248D-45E1-9CB2-0CE53ABCE1E5} = {1F2904EF-7ECD-4ECC-A85F-6CC3EB776F04}
+		{7BD1BCBD-30A2-4347-A9A2-8227584CB819} = {1F2904EF-7ECD-4ECC-A85F-6CC3EB776F04}
+		{A91B076C-4E7C-4637-AA07-DC7B359A5BD0} = {2D408D0B-1829-4555-886F-8C02B9D7A54D}
+		{EF5D493D-9FA9-4D4C-B702-E683CA1118F2} = {55D4BF67-3A97-4D3A-A5E8-6AD39247DEDA}
+		{1277527F-3518-43AD-8A59-04FB386735F7} = {55D4BF67-3A97-4D3A-A5E8-6AD39247DEDA}
+		{4ED29B2D-6F0A-42D1-8CD0-580C41F20612} = {EF5D493D-9FA9-4D4C-B702-E683CA1118F2}
+		{6B47823C-E0F2-4DC2-8A85-EC8C8AABBAFE} = {1277527F-3518-43AD-8A59-04FB386735F7}
+		{E4ADDD9C-FFFC-4016-808A-2B765535545A} = {55D4BF67-3A97-4D3A-A5E8-6AD39247DEDA}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D5D48F04-6FDE-434E-9F45-D36755BCEA52}
+	EndGlobalSection
+EndGlobal

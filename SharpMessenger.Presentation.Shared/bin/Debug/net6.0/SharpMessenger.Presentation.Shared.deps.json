@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "SharpMessenger.Presentation.Shared/1.0.0": {
+        "runtime": {
+          "SharpMessenger.Presentation.Shared.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SharpMessenger.Presentation.Shared/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

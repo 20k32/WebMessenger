@@ -1,0 +1,69 @@
+﻿@using SharpMessegner.ChatUserInterface.UIModels;
+@using SharpMessenger.Application.Contracts;
+
+
+<style>
+
+    .table-hover tbody tr:hover td {
+        background: @RowBackgroundColor;
+        cursor: @CursorStyle;
+    }
+</style>
+
+<table class="table text-center table-hover align-content-center">
+    <thead class="table-dark">
+        <tr>
+            <th colspan="3" scope="col">
+                Your Friends
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (SearchedItemModel item in AvailableUsers)
+        {
+            <tr style="vertical-align:middle;" @onmouseover="() => OnMouseOver(item)">
+                <td>
+                    <button class="@item.Button.ButtonClass"
+                    @onclick="@(() => OnAddDeleteButtonClick(item))">
+                        @item.Button.ButtonName
+                    </button>
+                </td>
+                <td class="fw-bold" style="text-align:left; :hower"
+                @onclick="(async () => await LoadHistoryAsync(item))">
+                    @item.UserData.UserName
+                </td>
+                <td class="fw-bold" style="text-align:left">
+                    @{
+                        int unreadMessages = GetUnreadMessagesForUser(item);
+                    }
+                    @(unreadMessages == 0 ? string.Empty : "(" + unreadMessages + ")")
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code
+{
+    [Parameter]
+    public List<SearchedItemModel> AvailableUsers { get; set; } = null!;
+
+    [Parameter]
+    public Action<ISearchedItem> OnMouseOver { get; set; } = null!;
+
+    [Parameter]
+    public Func<ISearchedItem, Task> OnAddDeleteButtonClick { get; set; } = null!;
+
+    [Parameter]
+    public Func<ISearchedItem, Task> LoadHistoryAsync { get; set; } = null!;
+
+    [Parameter]
+    public Func<ISearchedItem, int> GetUnreadMessagesForUser { get; set; } = null!;
+
+    [Parameter]
+    public string RowBackgroundColor { get; set; } = null!;
+
+    [Parameter]
+    public string CursorStyle { get; set; } = null!;
+
+}

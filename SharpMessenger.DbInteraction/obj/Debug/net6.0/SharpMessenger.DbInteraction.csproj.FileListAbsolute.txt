@@ -1,0 +1,15 @@
+C:\Users\egorm\source\repos\SharpMessenger\SharpMessenger.DbInteraction\bin\Debug\net6.0\SharpMessenger.DbInteraction.deps.json
+C:\Users\egorm\source\repos\SharpMessenger\SharpMessenger.DbInteraction\bin\Debug\net6.0\SharpMessenger.DbInteraction.dll
+C:\Users\egorm\source\repos\SharpMessenger\SharpMessenger.DbInteraction\bin\Debug\net6.0\SharpMessenger.DbInteraction.pdb
+C:\Users\egorm\source\repos\SharpMessenger\SharpMessenger.DbInteraction\bin\Debug\net6.0\SharpMessenger.Domain.dll
+C:\Users\egorm\source\repos\SharpMessenger\SharpMessenger.DbInteraction\bin\Debug\net6.0\SharpMessenger.Domain.pdb
+C:\Users\egorm\source\repos\SharpMessenger\SharpMessenger.DbInteraction\obj\Debug\net6.0\SharpMessenger.DbInteraction.csproj.AssemblyReference.cache
+C:\Users\egorm\source\repos\SharpMessenger\SharpMessenger.DbInteraction\obj\Debug\net6.0\SharpMessenger.DbInteraction.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\egorm\source\repos\SharpMessenger\SharpMessenger.DbInteraction\obj\Debug\net6.0\SharpMessenger.DbInteraction.AssemblyInfoInputs.cache
+C:\Users\egorm\source\repos\SharpMessenger\SharpMessenger.DbInteraction\obj\Debug\net6.0\SharpMessenger.DbInteraction.AssemblyInfo.cs
+C:\Users\egorm\source\repos\SharpMessenger\SharpMessenger.DbInteraction\obj\Debug\net6.0\SharpMessenger.DbInteraction.csproj.CoreCompileInputs.cache
+C:\Users\egorm\source\repos\SharpMessenger\SharpMessenger.DbInteraction\obj\Debug\net6.0\SharpMessenger.DbInteraction.csproj.CopyComplete
+C:\Users\egorm\source\repos\SharpMessenger\SharpMessenger.DbInteraction\obj\Debug\net6.0\SharpMessenger.DbInteraction.dll
+C:\Users\egorm\source\repos\SharpMessenger\SharpMessenger.DbInteraction\obj\Debug\net6.0\refint\SharpMessenger.DbInteraction.dll
+C:\Users\egorm\source\repos\SharpMessenger\SharpMessenger.DbInteraction\obj\Debug\net6.0\SharpMessenger.DbInteraction.pdb
+C:\Users\egorm\source\repos\SharpMessenger\SharpMessenger.DbInteraction\obj\Debug\net6.0\ref\SharpMessenger.DbInteraction.dll

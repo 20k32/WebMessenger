@@ -1,0 +1,63 @@
+﻿@page "/login"
+@using Blazored.SessionStorage;
+@using SharpMessegner.ChatUserInterface.Authentication;
+@using SharpMessegner.ChatUserInterface.UIModels;
+@using SharpMessenger.Presentation.Shared;
+
+@inject ISessionStorageService Session
+@inject HttpClient Client
+@inject IJSRuntime JsRuntime
+@inject AuthenticationStateProvider AuthenticaionState
+@inject NavigationManager NavManager
+
+<div class="row">
+    <div class="col-lg-4 offset-lg-4 pt-4 pb-4 border">
+        <div class="mb-3 text-center">
+            <h3>Sign Up</h3>
+        </div>
+        <div class="mb-3">
+            <div class="input-group mb-3">
+              <span class="input-group-text">@@</span>
+                <input @bind="loginRequest.UserName" class="form-control" placeholder="UserName" />
+            </div>
+        </div>
+        <div class="mb-3">
+            <input @bind="loginRequest.Password" type="password" class="form-control" placeholder="Password" />
+        </div>
+        <div class="mb-3 d-grid gap-2">
+            <button @onclick="@Authorize" class="btn btn-primary">Enter</button>
+        </div>
+    </div>
+</div>
+
+@code {
+    private LoginRequest loginRequest = new();
+
+    private async Task Authorize()
+    {
+        var loginResponse = await Client.PostAsJsonAsync<LoginRequest>("/api/Account/Login", loginRequest);
+
+        if (loginResponse.IsSuccessStatusCode)
+        {
+            var userSession = await loginResponse.Content.ReadFromJsonAsync<UserSession>();
+            var customAuthStateProvider = (CustomAuthenticationStateProvider)AuthenticaionState;
+
+            string key = "@" + userSession!.UserName;
+
+            List<string> item = await Session.GetItemAsync<List<string>>(key);
+            if(item == null)
+            {
+                await Session.SetItemAsync("@" + userSession!.UserName, new List<string>());
+            }
+          
+            await customAuthStateProvider.UpdateAuthenticationState(userSession);
+
+            NavManager.NavigateTo("/", true);
+        }
+        else if(loginResponse.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+        {
+            await JsRuntime.InvokeVoidAsync("alert", "Invalid UserName or Password");
+        }
+    }
+
+}
