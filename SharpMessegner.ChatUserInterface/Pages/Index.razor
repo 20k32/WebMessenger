@@ -9,17 +9,29 @@
 <div class="container text-center">
     <div class="row">
         <div class="col" style="overflow-y:auto">
-            <AvaliableUsersTable
-                AvailableUsers="@AvailableUsers"
-                GetUnreadMessagesForUser="@GetUnreadMessagesForUser"
-                LoadHistoryAsync="@LoadHistoryAsync"
-                OnAddDeleteButtonClick="OnAddDeleteButtonClick"
-                OnMouseOver="OnMouseOver"
-                RowBackgroundColor="@RowBackgroundColor"
-                CursorStyle="@CursorStyle"/>
+            <AvaliableUsersTable AvailableUsers="@AvailableUsers"
+                                 GetUnreadMessagesForUser="@GetUnreadMessagesForUser"
+                                 LoadHistoryAsync="@LoadHistoryAsync"
+                                 OnAddDeleteButtonClick="OnAddDeleteButtonClick"
+                                 OnMouseOver="OnMouseOver"
+                                 RowBackgroundColor="@RowBackgroundColor"
+                                 CursorStyle="@CursorStyle" />
         </div>
         <div class="col-9" style="background-color:antiquewhite;height:700px;overflow-y:auto">
-            <span>this is chat for You and @RecipientName</span>
+            <div class="container">
+                @foreach (SearchedItemModel item in AvailableUsers)
+                {
+                    <div class="row">
+                        <div class="col">
+                            <div class="alert alert-danger" style="align-self:start" role="alert">
+                                @item.UserData.UserName
+                            </div>
+                        </div>
+                        <div class="col">
+                        </div>
+                    </div>
+                }
+            </div>
         </div>
     </div>
     <div class="row">

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4atmLhsC+aJdjLe1tj5dGzAnAhf6Cy3rbDMY4kdJ92kR7S+w1aHxf6BPxkyzXBUFISF5GEZvmAN3PMvFpL38qg==",
+  "dgSpecHash": "yQdK5mTa7HFLmOvhCKFfNvrhtNBWP7pZpuI0dF+UsFDpoc2gcJd07cG2ysI1i7s5+/pgE4g0AWdBnx8iPmSBlw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\egorm\\source\\repos\\SharpMessenger\\SharpMessenger.Application\\SharpMessenger.Application.csproj",
+  "projectFilePath": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessenger.Application\\SharpMessenger.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\egorm\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.16\\microsoft.aspnetcore.authorization.6.0.16.nupkg.sha512",
     "C:\\Users\\egorm\\.nuget\\packages\\microsoft.aspnetcore.components\\6.0.16\\microsoft.aspnetcore.components.6.0.16.nupkg.sha512",

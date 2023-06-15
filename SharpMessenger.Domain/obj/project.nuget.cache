@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JM6bEEO6zwjj5xpRB/nlCpMiDUWbp6tOY+SvUVcWpTbybW4UK9o2jQYmdKENFofQtXx0cXEQ+gFC1hIZkbc82g==",
+  "dgSpecHash": "+6zgFuTFa9op4/fTGRp2Imlr4EL/R/r1eSNToHhA7gpMBCEPWFKTiazzDOl3BymjOR2UvAJmUk6Qjrlg+bl+3Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\egorm\\source\\repos\\SharpMessenger\\SharpMessenger.Domain\\SharpMessenger.Domain.csproj",
+  "projectFilePath": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessenger.Domain\\SharpMessenger.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

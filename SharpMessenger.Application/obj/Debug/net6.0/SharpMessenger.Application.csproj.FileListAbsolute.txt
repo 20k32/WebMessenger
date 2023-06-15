@@ -10,3 +10,15 @@ C:\Users\egorm\source\repos\SharpMessenger\SharpMessenger.Application\obj\Debug\
 C:\Users\egorm\source\repos\SharpMessenger\SharpMessenger.Application\obj\Debug\net6.0\refint\SharpMessenger.Application.dll
 C:\Users\egorm\source\repos\SharpMessenger\SharpMessenger.Application\obj\Debug\net6.0\SharpMessenger.Application.pdb
 C:\Users\egorm\source\repos\SharpMessenger\SharpMessenger.Application\obj\Debug\net6.0\ref\SharpMessenger.Application.dll
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.Application\bin\Debug\net6.0\SharpMessenger.Application.deps.json
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.Application\bin\Debug\net6.0\SharpMessenger.Application.dll
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.Application\bin\Debug\net6.0\SharpMessenger.Application.pdb
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.Application\obj\Debug\net6.0\SharpMessenger.Application.csproj.AssemblyReference.cache
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.Application\obj\Debug\net6.0\SharpMessenger.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.Application\obj\Debug\net6.0\SharpMessenger.Application.AssemblyInfoInputs.cache
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.Application\obj\Debug\net6.0\SharpMessenger.Application.AssemblyInfo.cs
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.Application\obj\Debug\net6.0\SharpMessenger.Application.csproj.CoreCompileInputs.cache
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.Application\obj\Debug\net6.0\SharpMessenger.Application.dll
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.Application\obj\Debug\net6.0\refint\SharpMessenger.Application.dll
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.Application\obj\Debug\net6.0\SharpMessenger.Application.pdb
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.Application\obj\Debug\net6.0\ref\SharpMessenger.Application.dll

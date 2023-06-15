@@ -10,3 +10,15 @@ C:\Users\egorm\source\repos\SharpMessenger\SharpMessenger.Domain\obj\Debug\net6.
 C:\Users\egorm\source\repos\SharpMessenger\SharpMessenger.Domain\obj\Debug\net6.0\refint\SharpMessenger.Domain.dll
 C:\Users\egorm\source\repos\SharpMessenger\SharpMessenger.Domain\obj\Debug\net6.0\SharpMessenger.Domain.pdb
 C:\Users\egorm\source\repos\SharpMessenger\SharpMessenger.Domain\obj\Debug\net6.0\ref\SharpMessenger.Domain.dll
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.Domain\bin\Debug\net6.0\SharpMessenger.Domain.deps.json
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.Domain\bin\Debug\net6.0\SharpMessenger.Domain.dll
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.Domain\bin\Debug\net6.0\SharpMessenger.Domain.pdb
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.Domain\obj\Debug\net6.0\SharpMessenger.Domain.csproj.AssemblyReference.cache
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.Domain\obj\Debug\net6.0\SharpMessenger.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.Domain\obj\Debug\net6.0\SharpMessenger.Domain.AssemblyInfoInputs.cache
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.Domain\obj\Debug\net6.0\SharpMessenger.Domain.AssemblyInfo.cs
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.Domain\obj\Debug\net6.0\SharpMessenger.Domain.csproj.CoreCompileInputs.cache
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.Domain\obj\Debug\net6.0\SharpMessenger.Domain.dll
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.Domain\obj\Debug\net6.0\refint\SharpMessenger.Domain.dll
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.Domain\obj\Debug\net6.0\SharpMessenger.Domain.pdb
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.Domain\obj\Debug\net6.0\ref\SharpMessenger.Domain.dll

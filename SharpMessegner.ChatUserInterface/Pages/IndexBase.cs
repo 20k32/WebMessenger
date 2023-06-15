@@ -8,6 +8,7 @@ using SharpMessenger.Application;
 using SharpMessenger.Application.Contracts;
 using SharpMessenger.Application.UiModels;
 using SharpMessenger.Domain.Messages;
+using SharpMessenger.Domain.Models;
 using System;
 using System.Runtime.CompilerServices;
 
@@ -21,14 +22,17 @@ namespace SharpMessegner.ChatUserInterface.Pages
         [Inject]
         private AuthenticationStateProvider State { get; set; } = null!;
 
+
         public AuthenticationState AuthState = null!;
         private string CurrentUserName = string.Empty;
+        private string HistorySessionKey = null!;
         public string RecipientName = string.Empty;
-        List<string> UserFriends = new();
+        private List<string> UserFriends = new();
         public List<SearchedItemModel> AvailableUsers = new();
         public string RowBackgroundColor = string.Empty;
         public string CursorStyle = string.Empty;
         private HubConnection Connection = null!;
+        public Dictionary<string, List<Message>> History = null!;
 
         protected override async Task OnInitializedAsync()
         {
@@ -42,7 +46,7 @@ namespace SharpMessegner.ChatUserInterface.Pages
             {
                 RecipientName = searchedItem.UserData.UserName;
             }
-
+            StateHasChanged();
             return Task.CompletedTask;
         }
 
@@ -51,12 +55,16 @@ namespace SharpMessegner.ChatUserInterface.Pages
             AuthState = await State.GetAuthenticationStateAsync();
             CurrentUserName = string.Concat("@", AuthState.User.Identity!.Name);
             UserFriends = await Session.GetItemAsync<List<string>>(CurrentUserName);
+            HistorySessionKey = string.Concat(CurrentUserName, "_history");
+            History = await Session.GetItemAsync<Dictionary<string, List<Message>>>(HistorySessionKey);
 
             // get upcoming messages for every user
             AvailableUsers = UserFriends
                 .Select(x => new SearchedItemModel(new ComplexData(x, default(int)), ButtonDefaults.CreateDeleteButton()))
                 .ToList();
             //---
+
+            
 
             // todo: init connection
         }
@@ -137,9 +145,19 @@ namespace SharpMessegner.ChatUserInterface.Pages
             return Task.CompletedTask;
         }
 
-        private void MessageHandler(Message message)
+        private async Task MessageHandler(Message message)
         {
-        // todo: logic for receiving message
+            if (UserFriends.Contains(message.Sender))
+            {
+                if(!string.Equals(RecipientName, message.Sender))
+                {
+                    ComplexData userData = (AvailableUsers.Find(x => string.Equals(x.UserData.UserName, RecipientName))!.UserData as ComplexData)!;
+                    userData.UnreadMessages++;
+                }
+            }
+            StateHasChanged();
+            History[RecipientName].Add(message);
+            await Session.SetItemAsync<Dictionary<string, List<Message>>>(HistorySessionKey, History);
         }
     }
 }

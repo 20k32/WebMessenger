@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QCNZo34bVVNDBMw83tzMVt4lUimxaFTwsyHEi5LnTUB6ymElJL8/iqAyWqSZnHolidTx9FNop0c3sqKwfOcPcw==",
+  "dgSpecHash": "kWHzR/st+RyTG9X7N0CYpJPHZ+OPPW7KL/LMgVVekfikVgKFliTjblAtxmkt5pfjzkWTR83R8DSRqOEd6V8n4g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\egorm\\source\\repos\\SharpMessenger\\SharpMessenger.UsersApi\\SharpMessenger.UsersApi.csproj",
+  "projectFilePath": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessenger.UsersApi\\SharpMessenger.UsersApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\egorm\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.16\\microsoft.aspnetcore.authentication.jwtbearer.6.0.16.nupkg.sha512",
     "C:\\Users\\egorm\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

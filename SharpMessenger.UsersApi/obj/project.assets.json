@@ -1335,11 +1335,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\egorm\\source\\repos\\SharpMessenger\\SharpMessenger.UsersApi\\SharpMessenger.UsersApi.csproj",
+      "projectUniqueName": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessenger.UsersApi\\SharpMessenger.UsersApi.csproj",
       "projectName": "SharpMessenger.UsersApi",
-      "projectPath": "C:\\Users\\egorm\\source\\repos\\SharpMessenger\\SharpMessenger.UsersApi\\SharpMessenger.UsersApi.csproj",
+      "projectPath": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessenger.UsersApi\\SharpMessenger.UsersApi.csproj",
       "packagesPath": "C:\\Users\\egorm\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\egorm\\source\\repos\\SharpMessenger\\SharpMessenger.UsersApi\\obj\\",
+      "outputPath": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessenger.UsersApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\egorm\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1357,14 +1357,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\egorm\\source\\repos\\SharpMessenger\\SharpMessenger.DbInteraction\\SharpMessenger.DbInteraction.csproj": {
-              "projectPath": "C:\\Users\\egorm\\source\\repos\\SharpMessenger\\SharpMessenger.DbInteraction\\SharpMessenger.DbInteraction.csproj"
+            "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessenger.DbInteraction\\SharpMessenger.DbInteraction.csproj": {
+              "projectPath": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessenger.DbInteraction\\SharpMessenger.DbInteraction.csproj"
             },
-            "C:\\Users\\egorm\\source\\repos\\SharpMessenger\\SharpMessenger.Domain\\SharpMessenger.Domain.csproj": {
-              "projectPath": "C:\\Users\\egorm\\source\\repos\\SharpMessenger\\SharpMessenger.Domain\\SharpMessenger.Domain.csproj"
+            "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessenger.Domain\\SharpMessenger.Domain.csproj": {
+              "projectPath": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessenger.Domain\\SharpMessenger.Domain.csproj"
             },
-            "C:\\Users\\egorm\\source\\repos\\SharpMessenger\\SharpMessenger.Presentation.Shared\\SharpMessenger.Presentation.Shared.csproj": {
-              "projectPath": "C:\\Users\\egorm\\source\\repos\\SharpMessenger\\SharpMessenger.Presentation.Shared\\SharpMessenger.Presentation.Shared.csproj"
+            "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessenger.Presentation.Shared\\SharpMessenger.Presentation.Shared.csproj": {
+              "projectPath": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessenger.Presentation.Shared\\SharpMessenger.Presentation.Shared.csproj"
             }
           }
         }

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\egorm\\source\\repos\\SharpMessenger\\SharpMessenger.Presentation.Shared\\SharpMessenger.Presentation.Shared.csproj",
+      "projectUniqueName": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessenger.Presentation.Shared\\SharpMessenger.Presentation.Shared.csproj",
       "projectName": "SharpMessenger.Presentation.Shared",
-      "projectPath": "C:\\Users\\egorm\\source\\repos\\SharpMessenger\\SharpMessenger.Presentation.Shared\\SharpMessenger.Presentation.Shared.csproj",
+      "projectPath": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessenger.Presentation.Shared\\SharpMessenger.Presentation.Shared.csproj",
       "packagesPath": "C:\\Users\\egorm\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\egorm\\source\\repos\\SharpMessenger\\SharpMessenger.Presentation.Shared\\obj\\",
+      "outputPath": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessenger.Presentation.Shared\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\egorm\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -227,19 +227,19 @@
       "mscorlib.dll": "sha256-C3gpWQMELcHYfrHU\/1agQUvWTtSNs9Ul2suMxcKFnIc=",
       "netstandard.dll": "sha256-CgGkoZQx73t3qchcsu85kgBcgrjNEOiudArOwKNb18k=",
       "System.Private.CoreLib.dll": "sha256-6nUSjiT7okMlkN897OnDypwppYuK7JxTahOClXkAuwE=",
-      "SharpMessenger.Application.dll": "sha256-f2CRSgxzkcyT1gYqO9uGGrloCSsFmhvamQkLR3mJWeA=",
-      "SharpMessenger.Domain.dll": "sha256-gwbKlTV9QaZkgcl7gRtbqQC4fSiMQlipS\/dl28FKquY=",
-      "SharpMessenger.Presentation.Shared.dll": "sha256-Nx0zlMjfEqRbppum1+MMjFVKRwidpoeIOVL9e99ShpA=",
-      "SharpMessegner.ChatUserInterface.dll": "sha256-aIIL693Eznb8TTD9OIk0LmfSEeWp9FCKhNDOVPZJxtA="
+      "SharpMessenger.Application.dll": "sha256-RgX7SVfJz5JWRRmLpzMI\/2FwdFu\/8pFredsSQO5+4xM=",
+      "SharpMessenger.Domain.dll": "sha256-f2KIHWqOoqKa\/Bf5SkVmoK5KEYpnvnZ9KvczjV4fNmo=",
+      "SharpMessenger.Presentation.Shared.dll": "sha256-9TQjPUyIRflkmqIqg41Zw8\/U1Tbh4BSDW7sOVjXNoH0=",
+      "SharpMessegner.ChatUserInterface.dll": "sha256-CnMIb5fQ4oUyqzfHHRh64CdlWNMwgdZbsZTnLDgSIW0="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "SharpMessenger.Application.pdb": "sha256-Alv733c5Y8yOAge4Nf8KlmiDKiXlb8PKmYogHNXkPPs=",
-      "SharpMessenger.Domain.pdb": "sha256-1vEoFyScf0UE6qMfk5GAm2EP\/LUcFGcvju3IUPUgtyw=",
-      "SharpMessenger.Presentation.Shared.pdb": "sha256-jJUQ7BMTTGr0VXhUreSmpE0e+NLqeAUaylH8vCkramM=",
-      "SharpMessegner.ChatUserInterface.pdb": "sha256-+iAGgMrKUlT3KY2rA+C0xBKj7sBgasGJpZMWsK9pxDk="
+      "SharpMessenger.Application.pdb": "sha256-GttmVm0qoI6IXSHvQpYcdYnv3qX1lM5LhfmDuMkp1sg=",
+      "SharpMessenger.Domain.pdb": "sha256-b6hhgnFPGZKXSClbG\/sFE1vJaa8XCnq+QTjKcmL3dXQ=",
+      "SharpMessenger.Presentation.Shared.pdb": "sha256-C6ArmVUFqZsIog+UCQ3sW39o89C\/PchFI4DYKSBNk8g=",
+      "SharpMessegner.ChatUserInterface.pdb": "sha256-pRnQPmkTHxzApo9Olrft5rC2n78fMo0p1KQ+DMM9S1U="
     },
     "runtime": {
       "dotnet.6.0.16.fy2kjeycku.js": "sha256-GT2gK+GjOisRXJY+9yh6H8s6K\/KDIsaFMFIgWvAnttY=",

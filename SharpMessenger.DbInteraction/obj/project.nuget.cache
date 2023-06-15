@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MVMNy5tEVlVe4dUcCC0wFmSGF51eXtIutWBUeEicPc3BSwZXO1q9HcfgGrvTwuMGR3F3JTAtoo30tNQ53B80Ug==",
+  "dgSpecHash": "JDn/LMZw02AT3s1odEbCYZnSNyjvNgYO8rZooF45O3TBMEkebjwuI9t+gyztryg8LH87cNfyDez5v8dIDAIL+g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\egorm\\source\\repos\\SharpMessenger\\SharpMessenger.DbInteraction\\SharpMessenger.DbInteraction.csproj",
+  "projectFilePath": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessenger.DbInteraction\\SharpMessenger.DbInteraction.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\egorm\\.nuget\\packages\\microsoft.extensions.configuration\\8.0.0-preview.4.23259.5\\microsoft.extensions.configuration.8.0.0-preview.4.23259.5.nupkg.sha512",
     "C:\\Users\\egorm\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0-preview.4.23259.5\\microsoft.extensions.configuration.abstractions.8.0.0-preview.4.23259.5.nupkg.sha512",
