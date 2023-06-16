@@ -17,20 +17,9 @@
                                  RowBackgroundColor="@RowBackgroundColor"
                                  CursorStyle="@CursorStyle" />
         </div>
-        <div class="col-9" style="background-color:antiquewhite;height:700px;overflow-y:auto">
+        <div class="col-9" style="background-color:antiquewhite;height:700px;overflow-y:auto;padding:5px">
             <div class="container">
-                @foreach (SearchedItemModel item in AvailableUsers)
-                {
-                    <div class="row">
-                        <div class="col">
-                            <div class="alert alert-danger" style="align-self:start" role="alert">
-                                @item.UserData.UserName
-                            </div>
-                        </div>
-                        <div class="col">
-                        </div>
-                    </div>
-                }
+               <UserHistory AvailableUsers="@AvailableUsers"/>
             </div>
         </div>
     </div>
