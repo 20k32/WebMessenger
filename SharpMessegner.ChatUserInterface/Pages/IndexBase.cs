@@ -3,9 +3,6 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
 using SharpMessenger.Domain.AppLogic;
 using SharpMessenger.Domain.AppLogic.MainWindowLogic;
-using SharpMessenger.Domain.Contracts;
-using SharpMessenger.Domain.Messages;
-using SharpMessenger.Domain.UiModels;
 
 
 namespace SharpMessegner.ChatUserInterface.Pages
