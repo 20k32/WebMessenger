@@ -14,8 +14,4 @@
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="8.0.0-preview.5.23302.2" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="AppLogic\SearchWindowLogic\" />
-  </ItemGroup>
-
 </Project>

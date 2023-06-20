@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components.Authorization;
 
-namespace SharpMessenger.Domain.AppLogic.MainWindowLogic.MainWindowComponents
+namespace SharpMessenger.Domain.AppLogic.ComponentsContracts
 {
     public interface IGetAuthState
     {

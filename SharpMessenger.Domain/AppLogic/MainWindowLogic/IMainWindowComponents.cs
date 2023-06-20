@@ -1,4 +1,4 @@
-﻿using SharpMessenger.Domain.AppLogic.MainWindowLogic.MainWindowComponents;
+﻿using SharpMessenger.Domain.AppLogic.ComponentsContracts;
 
 namespace SharpMessenger.Domain.AppLogic.MainWindowLogic.MainWindowComponents;
 

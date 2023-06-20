@@ -1,6 +1,6 @@
 ﻿using SharpMessenger.Domain.Messages;
 
-namespace SharpMessenger.Domain.AppLogic.MainWindowLogic.MainWindowComponents
+namespace SharpMessenger.Domain.AppLogic.ComponentsContracts
 {
     public interface IGetUserHistory
     {

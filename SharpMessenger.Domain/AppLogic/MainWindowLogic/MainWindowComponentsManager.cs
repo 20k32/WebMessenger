@@ -5,17 +5,10 @@ using SharpMessenger.Domain.Messages;
 
 namespace SharpMessenger.Domain.AppLogic.MainWindowLogic
 {
-    public class MainWindowComponentsManager : IMainWindowComponents
+    public class MainWindowComponentsManager : ApplicationComopentsBase, IMainWindowComponents
     {
-
-        private AuthenticationStateProvider StateProvider = null!;
-        private ISessionStorageService ClientSession = null!;
-
-        public MainWindowComponentsManager(AuthenticationStateProvider provider, ISessionStorageService session)
-        {
-            StateProvider = provider;
-            ClientSession = session;
-        }
+        public MainWindowComponentsManager(AuthenticationStateProvider provider, ISessionStorageService service) : base(provider, service)
+        { }
 
         public Task<AuthenticationState> GetAuthenticationStateAsync()
         {

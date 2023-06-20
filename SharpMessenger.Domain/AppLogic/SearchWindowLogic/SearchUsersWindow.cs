@@ -1,47 +1,31 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using Blazored.SessionStorage;
+using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
 using SharpMessanger.Domain.Clients;
-using Blazored.SessionStorage;
-using System.Net.Http.Json;
+using SharpMessegner.Domain.UIModels;
 using SharpMessenger.Domain.Contracts;
 using SharpMessenger.Domain.UiModels;
-using SharpMessegner.Domain.UIModels;
-using SharpMessenger.Domain.AppLogic.SearchWindowLogic;
+using System.Net.Http.Json;
 
-namespace SharpMessegner.ChatUserInterface.Pages
+namespace SharpMessenger.Domain.AppLogic.SearchWindowLogic
 {
-    public class SearchUsersBase : ComponentBase
+    public class SearchUsersWindow : ISearchUserPage
     {
+        private SearchUsersWindowComponentsManager Manager = null!;
+        private string CurrentUserName = null!;
 
-        [Inject]
-        private ISessionStorageService Session { get; set; } = null!;
-
-        [Inject]
-        private AuthenticationStateProvider State { get; set; } = null!;
-
-        [Inject]
-        private HttpClient Client { get; set; } = null!;
-
-        /*public List<string> UserFriends = null!;
+        public List<string> UserFriends = null!;
         public string SearchOptions = string.Empty;
         public SearchedItemModel[] SearchedData = Array.Empty<SearchedItemModel>();
         public AuthenticationState AuthState = null!;
-        private string CurrentUserName = null!;*/
 
-        public SearchUsersWindow Window = null!;
+        public SearchUsersWindow(SearchUsersWindowComponentsManager manager) =>
+            Manager = manager;
+            
 
-        protected override async Task OnInitializedAsync()
+        public async Task OnSearchButtonClick()
         {
-            /*await OnWindowInitialized();*/
-            Window = new(new SearchUsersWindowComponentsManager(State, Session, Client));
-
-            await Window.OnWindowInitialized();
-        }
-
-        /*public async Task OnSearchButtonClick()
-        {
-            IEnumerable<User> users = await Client.GetFromJsonAsync<IEnumerable<User>>("api/Users/GetUserData/")
-                ?? Array.Empty<User>();
+            IEnumerable<User> users = await Manager.GetClientsFromServer() ?? Array.Empty<User>();
 
             SearchedData = users
               .Where(x => x.UserNameReference.Contains(SearchOptions) && !string.Equals(x.UserNameReference, CurrentUserName))
@@ -63,7 +47,7 @@ namespace SharpMessegner.ChatUserInterface.Pages
                 OnDeleteButtonClick(currentItem);
             }
 
-            await Session.SetItemAsync<List<string>>(CurrentUserName, UserFriends);
+            await Manager.SetUserFriendsAsync(UserFriends, CurrentUserName);
         }
 
         public void OnAddButtonClick(ISearchedItem currentItem)
@@ -80,9 +64,9 @@ namespace SharpMessegner.ChatUserInterface.Pages
 
         public async Task OnWindowInitialized()
         {
-            AuthState = await State.GetAuthenticationStateAsync();
+            AuthState = await Manager.GetAuthenticationStateAsync();
             CurrentUserName = string.Concat("@", AuthState.User.Identity!.Name);
-            UserFriends = await Session.GetItemAsync<List<string>>(CurrentUserName);
-        }*/
+            UserFriends = await Manager.GetUserFriendsAsync(CurrentUserName);
+        }
     }
 }
