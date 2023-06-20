@@ -15,17 +15,21 @@ namespace SharpMessenger.Domain.AppLogic
 
         private string CurrentUserName = string.Empty;
         private string HistorySessionKey = null!;
-        private HubConnection Connection = null!;
+
         private List<string> UserFriends = new();
 
+        private HubConnection Connection = null!;
+        private MainWindowComponentsManager Manager = null!;
+
         public AuthenticationState AuthState = null!;
+
         public string RecipientName = string.Empty;
-        public List<SearchedItemModel> AvailableUsers = new();
         public string RowBackgroundColor = string.Empty;
         public string CursorStyle = string.Empty;
-        public Dictionary<string, List<Message>> History = null!;
 
-        private MainWindowComponentsManager Manager = null!;
+        public List<SearchedItemModel> AvailableUsers = new();
+        public Dictionary<string, List<Message>> History = null!;
+        public Action NotifyUserIterfaceStateChanged = null!;
 
         public MainWindow(MainWindowComponentsManager manager)
         {
@@ -58,7 +62,7 @@ namespace SharpMessenger.Domain.AppLogic
             {
                 RecipientName = searchedItem.UserData.UserName;
             }
-            //StateHasChanged();
+            NotifyUserIterfaceStateChanged.Invoke();
             return Task.CompletedTask;
         }
 
@@ -67,7 +71,9 @@ namespace SharpMessenger.Domain.AppLogic
             Connection = new HubConnectionBuilder()
                  .WithUrl("https://localhost:7105/notification")
                  .WithAutomaticReconnect()
-                 .Build();    
+                 .Build();
+
+            Connection.On<Message>("SendMessageToUser", BaseMessageHandler);
 
             return Task.CompletedTask;
         }
@@ -87,7 +93,7 @@ namespace SharpMessenger.Domain.AppLogic
                     userData.UnreadMessages++;
                 }
             }
-            //StateHasChanged();
+            NotifyUserIterfaceStateChanged.Invoke();
             History[RecipientName].Add(message);
             await Manager.SetUserHistory(History, HistorySessionKey);
         }
@@ -108,6 +114,7 @@ namespace SharpMessenger.Domain.AppLogic
             {
                 OnDeleteButtonClick(currentItem);
             }
+            NotifyUserIterfaceStateChanged.Invoke();
             await Manager.SetUserFriendsAsync(UserFriends, CurrentUserName);
         }
 
@@ -138,7 +145,6 @@ namespace SharpMessenger.Domain.AppLogic
             {
                 //todo: erase history for particular chat
             }
-
         }
 
         public void OnMouseOver(ISearchedItem currentItem)
@@ -154,7 +160,7 @@ namespace SharpMessenger.Domain.AppLogic
                 RowBackgroundColor = "grey";
                 CursorStyle = "arrow";
             }
-            //StateHasChanged();
+            NotifyUserIterfaceStateChanged.Invoke();
         }
     }
 }

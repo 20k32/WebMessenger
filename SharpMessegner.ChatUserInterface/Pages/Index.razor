@@ -9,9 +9,9 @@
         <div class="col" style="overflow-y:auto">
             <AvaliableUsersTable AvailableUsers="@Window.AvailableUsers"
                                  GetUnreadMessagesForUser="@Window.GetUnreadMessagesForUser"
-                                 LoadHistoryAsync="@LoadHistoryAsync"
-                                 OnAddDeleteButtonClick="@OnAddDeleteButtonClick"
-                                 OnMouseOver="@OnMouseOver"
+                                 LoadHistoryAsync="@Window.LoadHistoryAsync"
+                                 OnAddDeleteButtonClick="@Window.OnAddDeleteButtonClick"
+                                 OnMouseOver="@Window.OnMouseOver"
                                  RowBackgroundColor="@Window.RowBackgroundColor"
                                  CursorStyle="@Window.CursorStyle" />
         </div>

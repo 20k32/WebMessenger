@@ -10,7 +10,7 @@ using SharpMessenger.Domain.UiModels;
 
 namespace SharpMessegner.ChatUserInterface.Pages
 {
-    public class IndexBase : ComponentBase
+    public class IndexBase : ComponentBase, IDisposable
     {
         [Inject]
         private ISessionStorageService Session { get; set; } = null!;
@@ -20,47 +20,18 @@ namespace SharpMessegner.ChatUserInterface.Pages
 
         public MainWindow Window = null!;
 
-
         protected override async Task OnInitializedAsync()
         {
             Window = new(new MainWindowComponentsManager(State, Session));
 
+            Window.NotifyUserIterfaceStateChanged += StateHasChanged;
+
             await Window.OnWindowInitialized();
         }
 
-        public async Task LoadHistoryAsync(ISearchedItem searchedItem)
+        public void Dispose()
         {
-            await Window.LoadHistoryAsync(searchedItem);
-            StateHasChanged();
-        }
-
-        public void OnMouseOver(ISearchedItem currentItem)
-        {
-           Window.OnMouseOver(currentItem);
-           StateHasChanged();
-        }
-
-        public int GetUnreadMessagesForUser(ISearchedItem user)
-        {
-            return (user.UserData as ComplexData)!.UnreadMessages;
-        }
-
-        public async Task InitConnection()
-        {
-            await Window.InitConnection();
-            Window.SetSendToUserEventHandler(MessageHandler);
-        }
-
-        private async Task MessageHandler(Message message)
-        {
-            await Window.BaseMessageHandler(message);
-            StateHasChanged();
-        }
-
-        public async Task OnAddDeleteButtonClick(ISearchedItem currentItem)
-        {
-            await Window.OnAddDeleteButtonClick(currentItem);
-            StateHasChanged();
+            Window.NotifyUserIterfaceStateChanged -= StateHasChanged;
         }
     }
 }
