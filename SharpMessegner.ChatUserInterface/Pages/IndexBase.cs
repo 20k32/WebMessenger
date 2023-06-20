@@ -1,20 +1,16 @@
 ﻿using Blazored.SessionStorage;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
-using Microsoft.AspNetCore.SignalR.Client;
-using Microsoft.JSInterop;
-using SharpMessegner.ChatUserInterface.UIModels;
-using SharpMessenger.Application;
-using SharpMessenger.Application.Contracts;
-using SharpMessenger.Application.UiModels;
+using SharpMessenger.Domain.AppLogic;
+using SharpMessenger.Domain.AppLogic.MainWindowLogic;
+using SharpMessenger.Domain.Contracts;
 using SharpMessenger.Domain.Messages;
-using SharpMessenger.Domain.Models;
-using System;
-using System.Runtime.CompilerServices;
+using SharpMessenger.Domain.UiModels;
+
 
 namespace SharpMessegner.ChatUserInterface.Pages
 {
-    public class IndexBase : ComponentBase, IMainChatPage, IAddAndDeleteButton
+    public class IndexBase : ComponentBase
     {
         [Inject]
         private ISessionStorageService Session { get; set; } = null!;
@@ -22,110 +18,26 @@ namespace SharpMessegner.ChatUserInterface.Pages
         [Inject]
         private AuthenticationStateProvider State { get; set; } = null!;
 
+        public MainWindow Window = null!;
 
-        public AuthenticationState AuthState = null!;
-        private string CurrentUserName = string.Empty;
-        private string HistorySessionKey = null!;
-        public string RecipientName = string.Empty;
-        private List<string> UserFriends = new();
-        public List<SearchedItemModel> AvailableUsers = new();
-        public string RowBackgroundColor = string.Empty;
-        public string CursorStyle = string.Empty;
-        private HubConnection Connection = null!;
-        public Dictionary<string, List<Message>> History = null!;
 
         protected override async Task OnInitializedAsync()
         {
-            await OnWindowInitialized();
+            Window = new(new MainWindowComponentsManager(State, Session));
+
+            await Window.OnWindowInitialized();
         }
 
-        public Task LoadHistoryAsync(ISearchedItem searchedItem)
+        public async Task LoadHistoryAsync(ISearchedItem searchedItem)
         {
-            if (!string.Equals(searchedItem.Button.ButtonClass,
-                    ButtonDefaults.ADD_BUTTON_CLASS))
-            {
-                RecipientName = searchedItem.UserData.UserName;
-            }
+            await Window.LoadHistoryAsync(searchedItem);
             StateHasChanged();
-            return Task.CompletedTask;
-        }
-
-        public async Task OnWindowInitialized()
-        {
-            AuthState = await State.GetAuthenticationStateAsync();
-            CurrentUserName = string.Concat("@", AuthState.User.Identity!.Name);
-            UserFriends = await Session.GetItemAsync<List<string>>(CurrentUserName);
-            HistorySessionKey = string.Concat(CurrentUserName, "_history");
-            History = await Session.GetItemAsync<Dictionary<string, List<Message>>>(HistorySessionKey);
-
-            // get upcoming messages for every user
-            AvailableUsers = UserFriends
-                .Select(x => new SearchedItemModel(new ComplexData(x, default(int)), ButtonDefaults.CreateDeleteButton()))
-                .ToList();
-            //---
-
-            
-
-            // todo: init connection
-        }
-
-        public async Task OnAddDeleteButtonClick(ISearchedItem currentItem)
-        {
-            if (string.Equals(currentItem.Button.ButtonClass,
-                    ButtonDefaults.ADD_BUTTON_CLASS))
-            {
-                OnAddButtonClick(currentItem);
-            }
-            else
-            {
-                OnDeleteButtonClick(currentItem);
-            }
-            await Session.SetItemAsync<List<string>>(CurrentUserName, UserFriends);
-        }
-
-        private void RemoveFromAvailableUsersList(string name)
-        {
-            AvailableUsers.Remove(AvailableUsers.First(x => string.Equals(x.UserData.UserName, name)));
-        }
-
-        private void AddToAvailableUsersList(string name)
-        {
-            AvailableUsers.Add(new(new ComplexData(name, default(int)), ButtonDefaults.CreateDeleteButton()));
-        }
-
-        public void OnAddButtonClick(ISearchedItem currentItem)
-        {
-            currentItem.Button = ButtonDefaults.CreateDeleteButton();
-
-            UserFriends.Add(currentItem.UserData.UserName);
-            AddToAvailableUsersList(currentItem.UserData.UserName);
-        }
-
-        public void OnDeleteButtonClick(ISearchedItem currentItem)
-        {
-            UserFriends.Remove(currentItem.UserData.UserName);
-            RemoveFromAvailableUsersList(currentItem.UserData.UserName);
-
-            if (string.Equals(currentItem.UserData.UserName, RecipientName))
-            {
-                //todo: erase history for particular chat
-            }
         }
 
         public void OnMouseOver(ISearchedItem currentItem)
         {
-            if (!string.Equals(currentItem.Button.ButtonClass,
-                    ButtonDefaults.ADD_BUTTON_CLASS))
-            {
-                RowBackgroundColor = "yellow";
-                CursorStyle = "pointer";
-            }
-            else
-            {
-                RowBackgroundColor = "grey";
-                CursorStyle = "arrow";
-            }
-            StateHasChanged();
+           Window.OnMouseOver(currentItem);
+           StateHasChanged();
         }
 
         public int GetUnreadMessagesForUser(ISearchedItem user)
@@ -133,31 +45,22 @@ namespace SharpMessegner.ChatUserInterface.Pages
             return (user.UserData as ComplexData)!.UnreadMessages;
         }
 
-        public Task InitConnection()
+        public async Task InitConnection()
         {
-            Connection = new HubConnectionBuilder()
-                .WithUrl("https://localhost:7105/notification")
-                .WithAutomaticReconnect()
-                .Build();
-
-            Connection.On<Message>("SendMessageToUser", MessageHandler);
-
-            return Task.CompletedTask;
+            await Window.InitConnection();
+            Window.SetSendToUserEventHandler(MessageHandler);
         }
 
         private async Task MessageHandler(Message message)
         {
-            if (UserFriends.Contains(message.Sender))
-            {
-                if(!string.Equals(RecipientName, message.Sender))
-                {
-                    ComplexData userData = (AvailableUsers.Find(x => string.Equals(x.UserData.UserName, RecipientName))!.UserData as ComplexData)!;
-                    userData.UnreadMessages++;
-                }
-            }
+            await Window.BaseMessageHandler(message);
             StateHasChanged();
-            History[RecipientName].Add(message);
-            await Session.SetItemAsync<Dictionary<string, List<Message>>>(HistorySessionKey, History);
+        }
+
+        public async Task OnAddDeleteButtonClick(ISearchedItem currentItem)
+        {
+            await Window.OnAddDeleteButtonClick(currentItem);
+            StateHasChanged();
         }
     }
 }

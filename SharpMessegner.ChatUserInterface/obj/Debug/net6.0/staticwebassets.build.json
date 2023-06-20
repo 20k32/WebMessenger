@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Tp3kAoGikvlxRsFLGZL5iI05k82a6Gfs//Pd/qrPD1s=",
+  "Hash": "/idQwIT1I3wL71iFM6xXoVpbBX/jbsM7okLldNXQWuQ=",
   "Source": "SharpMessegner.ChatUserInterface",
   "BasePath": "/",
   "Mode": "Root",
@@ -269,7 +269,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\egorm\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.16\\lib\\net6.0\\Microsoft.AspNetCore.Authorization.dll"
+      "OriginalItemSpec": "C:\\Users\\egorm\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.18\\lib\\net6.0\\Microsoft.AspNetCore.Authorization.dll"
     },
     {
       "Identity": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Authorization.dll",
@@ -286,7 +286,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\egorm\\.nuget\\packages\\microsoft.aspnetcore.components.authorization\\6.0.16\\lib\\net6.0\\Microsoft.AspNetCore.Components.Authorization.dll"
+      "OriginalItemSpec": "C:\\Users\\egorm\\.nuget\\packages\\microsoft.aspnetcore.components.authorization\\6.0.18\\lib\\net6.0\\Microsoft.AspNetCore.Components.Authorization.dll"
     },
     {
       "Identity": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.dll",
@@ -303,7 +303,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\egorm\\.nuget\\packages\\microsoft.aspnetcore.components\\6.0.16\\lib\\net6.0\\Microsoft.AspNetCore.Components.dll"
+      "OriginalItemSpec": "C:\\Users\\egorm\\.nuget\\packages\\microsoft.aspnetcore.components\\6.0.18\\lib\\net6.0\\Microsoft.AspNetCore.Components.dll"
     },
     {
       "Identity": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Forms.dll",
@@ -575,7 +575,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\egorm\\.nuget\\packages\\microsoft.aspnetcore.metadata\\6.0.16\\lib\\net6.0\\Microsoft.AspNetCore.Metadata.dll"
+      "OriginalItemSpec": "C:\\Users\\egorm\\.nuget\\packages\\microsoft.aspnetcore.metadata\\6.0.18\\lib\\net6.0\\Microsoft.AspNetCore.Metadata.dll"
     },
     {
       "Identity": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.AspNetCore.SignalR.Client.Core.dll",
@@ -4284,6 +4284,23 @@
       "OriginalItemSpec": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.IO.Pipes.dll"
     },
     {
+      "Identity": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\obj\\Debug\\net6.0\\build-gz\\0LvrGNPL.gz",
+      "SourceId": "SharpMessegner.ChatUserInterface",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Components.Authorization.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Authorization.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Authorization.dll"
+    },
+    {
       "Identity": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\obj\\Debug\\net6.0\\build-gz\\0ZzRId+4.gz",
       "SourceId": "SharpMessegner.ChatUserInterface",
       "SourceType": "Computed",
@@ -4471,23 +4488,6 @@
       "OriginalItemSpec": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Data.Common.dll"
     },
     {
-      "Identity": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\obj\\Debug\\net6.0\\build-gz\\3zLyJD0p.gz",
-      "SourceId": "SharpMessegner.ChatUserInterface",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\bin\\Debug\\net6.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/Microsoft.AspNetCore.Metadata.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Metadata.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Metadata.dll"
-    },
-    {
       "Identity": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\obj\\Debug\\net6.0\\build-gz\\4DpA7yZo.gz",
       "SourceId": "SharpMessegner.ChatUserInterface",
       "SourceType": "Computed",
@@ -4520,23 +4520,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.Win32.Registry.dll"
-    },
-    {
-      "Identity": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\obj\\Debug\\net6.0\\build-gz\\4RRTLfwI.gz",
-      "SourceId": "SharpMessegner.ChatUserInterface",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\bin\\Debug\\net6.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/Microsoft.AspNetCore.Authorization.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Authorization.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Authorization.dll"
     },
     {
       "Identity": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\obj\\Debug\\net6.0\\build-gz\\5+HqILRL.gz",
@@ -5270,6 +5253,23 @@
       "OriginalItemSpec": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.ComponentModel.DataAnnotations.dll"
     },
     {
+      "Identity": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\obj\\Debug\\net6.0\\build-gz\\e61RCuiD.gz",
+      "SourceId": "SharpMessegner.ChatUserInterface",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Metadata.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Metadata.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Metadata.dll"
+    },
+    {
       "Identity": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\obj\\Debug\\net6.0\\build-gz\\eaTS3qUj.gz",
       "SourceId": "SharpMessegner.ChatUserInterface",
       "SourceType": "Computed",
@@ -5661,23 +5661,6 @@
       "OriginalItemSpec": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.Win32.Primitives.dll"
     },
     {
-      "Identity": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\obj\\Debug\\net6.0\\build-gz\\IdoI50We.gz",
-      "SourceId": "SharpMessegner.ChatUserInterface",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\bin\\Debug\\net6.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/Microsoft.AspNetCore.Components.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.dll"
-    },
-    {
       "Identity": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\obj\\Debug\\net6.0\\build-gz\\imcGRWf1.gz",
       "SourceId": "SharpMessegner.ChatUserInterface",
       "SourceType": "Computed",
@@ -5778,6 +5761,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.IO.FileSystem.AccessControl.dll"
+    },
+    {
+      "Identity": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\obj\\Debug\\net6.0\\build-gz\\IReeTnYJ.gz",
+      "SourceId": "SharpMessegner.ChatUserInterface",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Authorization.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Authorization.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Authorization.dll"
     },
     {
       "Identity": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\obj\\Debug\\net6.0\\build-gz\\irEMRo7+.gz",
@@ -7888,6 +7888,23 @@
       "OriginalItemSpec": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Net.Ping.dll"
     },
     {
+      "Identity": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\obj\\Debug\\net6.0\\build-gz\\yuky+9af.gz",
+      "SourceId": "SharpMessegner.ChatUserInterface",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Components.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.dll"
+    },
+    {
       "Identity": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\obj\\Debug\\net6.0\\build-gz\\z2o6nIr9.gz",
       "SourceId": "SharpMessegner.ChatUserInterface",
       "SourceType": "Computed",
@@ -7903,23 +7920,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.Extensions.Configuration.Json.dll"
-    },
-    {
-      "Identity": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\obj\\Debug\\net6.0\\build-gz\\z4+3EqiP.gz",
-      "SourceId": "SharpMessegner.ChatUserInterface",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\bin\\Debug\\net6.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/Microsoft.AspNetCore.Components.Authorization.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Authorization.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Authorization.dll"
     },
     {
       "Identity": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessegner.ChatUserInterface\\obj\\Debug\\net6.0\\build-gz\\ZCuOQrWF.gz",

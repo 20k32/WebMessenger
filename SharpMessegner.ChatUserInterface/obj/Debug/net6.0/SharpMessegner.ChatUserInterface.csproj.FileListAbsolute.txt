@@ -1686,9 +1686,6 @@ C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessegner.ChatUserInterf
 C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessegner.ChatUserInterface\obj\Debug\net6.0\build-gz\38EtTWcg.gz
 C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessegner.ChatUserInterface\obj\Debug\net6.0\build-gz\+PBMcw1H.gz
 C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessegner.ChatUserInterface\obj\Debug\net6.0\build-gz\S8Ye1bJG.gz
-C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessegner.ChatUserInterface\obj\Debug\net6.0\build-gz\4RRTLfwI.gz
-C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessegner.ChatUserInterface\obj\Debug\net6.0\build-gz\IdoI50We.gz
-C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessegner.ChatUserInterface\obj\Debug\net6.0\build-gz\z4+3EqiP.gz
 C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessegner.ChatUserInterface\obj\Debug\net6.0\build-gz\LtY3xFqd.gz
 C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessegner.ChatUserInterface\obj\Debug\net6.0\build-gz\VRUQhn1G.gz
 C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessegner.ChatUserInterface\obj\Debug\net6.0\build-gz\TjLw1oRC.gz
@@ -1704,7 +1701,6 @@ C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessegner.ChatUserInterf
 C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessegner.ChatUserInterface\obj\Debug\net6.0\build-gz\pBCVIJIJ.gz
 C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessegner.ChatUserInterface\obj\Debug\net6.0\build-gz\AHM18+N7.gz
 C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessegner.ChatUserInterface\obj\Debug\net6.0\build-gz\gCpnpGl+.gz
-C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessegner.ChatUserInterface\obj\Debug\net6.0\build-gz\3zLyJD0p.gz
 C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessegner.ChatUserInterface\obj\Debug\net6.0\build-gz\KHARKW01.gz
 C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessegner.ChatUserInterface\obj\Debug\net6.0\build-gz\ELTGLdng.gz
 C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessegner.ChatUserInterface\obj\Debug\net6.0\build-gz\S6bHEuzd.gz
@@ -1934,3 +1930,7 @@ C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessegner.ChatUserInterf
 C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessegner.ChatUserInterface\obj\Debug\net6.0\refint\SharpMessegner.ChatUserInterface.dll
 C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessegner.ChatUserInterface\obj\Debug\net6.0\SharpMessegner.ChatUserInterface.pdb
 C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessegner.ChatUserInterface\obj\Debug\net6.0\ref\SharpMessegner.ChatUserInterface.dll
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessegner.ChatUserInterface\obj\Debug\net6.0\build-gz\IReeTnYJ.gz
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessegner.ChatUserInterface\obj\Debug\net6.0\build-gz\yuky+9af.gz
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessegner.ChatUserInterface\obj\Debug\net6.0\build-gz\0LvrGNPL.gz
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessegner.ChatUserInterface\obj\Debug\net6.0\build-gz\e61RCuiD.gz

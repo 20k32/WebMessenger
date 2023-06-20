@@ -1,18 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yQdK5mTa7HFLmOvhCKFfNvrhtNBWP7pZpuI0dF+UsFDpoc2gcJd07cG2ysI1i7s5+/pgE4g0AWdBnx8iPmSBlw==",
+  "dgSpecHash": "OK1/N2BtxcuauCkYWMzM7oxt4muOp7ba6lraulBYzQdM5ZurNTi7JnAESvGq3IeqgZMDJvvmNugVJIz0pKog7Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessenger.Application\\SharpMessenger.Application.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\egorm\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.16\\microsoft.aspnetcore.authorization.6.0.16.nupkg.sha512",
-    "C:\\Users\\egorm\\.nuget\\packages\\microsoft.aspnetcore.components\\6.0.16\\microsoft.aspnetcore.components.6.0.16.nupkg.sha512",
-    "C:\\Users\\egorm\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\6.0.16\\microsoft.aspnetcore.components.analyzers.6.0.16.nupkg.sha512",
-    "C:\\Users\\egorm\\.nuget\\packages\\microsoft.aspnetcore.metadata\\6.0.16\\microsoft.aspnetcore.metadata.6.0.16.nupkg.sha512",
-    "C:\\Users\\egorm\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
-    "C:\\Users\\egorm\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.3\\microsoft.extensions.logging.abstractions.6.0.3.nupkg.sha512",
-    "C:\\Users\\egorm\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
-    "C:\\Users\\egorm\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
-    "C:\\Users\\egorm\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }

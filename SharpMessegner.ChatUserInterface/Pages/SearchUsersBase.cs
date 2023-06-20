@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
 using SharpMessanger.Domain.Clients;
-using SharpMessegner.ChatUserInterface.UIModels;
 using Blazored.SessionStorage;
 using System.Net.Http.Json;
-using SharpMessenger.Application.Contracts;
-using SharpMessenger.Application.UiModels;
+using SharpMessenger.Domain.Contracts;
+using SharpMessenger.Domain.UiModels;
+using SharpMessegner.Domain.UIModels;
 
 namespace SharpMessegner.ChatUserInterface.Pages
 {
