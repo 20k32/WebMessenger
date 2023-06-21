@@ -49,10 +49,6 @@ namespace SharpMessenger.Domain.AppLogic
             HistorySessionKey = string.Concat(CurrentUserName, "_history");
 
             History = await Manager.GetUserHistoryAsync(HistorySessionKey) ?? new();
-            if(History.Count > 0)
-            {
-                var list = History[RecipientName];
-            }
 
             // get upcoming messages for every user
             AvailableUsers = UserFriends
@@ -70,9 +66,6 @@ namespace SharpMessenger.Domain.AppLogic
             {
                 RecipientName = searchedItem.UserData.UserName;
             }
-
-            History = await Manager.GetUserHistoryAsync(HistorySessionKey);
-            var temItem = await Manager.GetUserFriendsAsync(CurrentUserName);
 
             NotifyUserIterfaceStateChanged.Invoke();
         }
@@ -202,14 +195,9 @@ namespace SharpMessenger.Domain.AppLogic
         {
             if (History == null!) { return; }
 
-
             SignMessage(message);
 
-            List<Message> tempHistory = History.GetValueOrDefault(RecipientName);
-
-            tempHistory.Add(message);
-
-            History[RecipientName] = tempHistory;
+            History[RecipientName].Add(message);
 
             await Manager.SetUserHistory(History, HistorySessionKey);
 
