@@ -17,15 +17,25 @@
         </div>
         <div class="col-9" style="background-color:antiquewhite;height:700px;overflow-y:auto;padding:5px">
             <div class="container">
-                <UserHistory Messages=@Window.GetHistoryForUser(Window.RecipientName)
-                             UserName="@Window.CurrentUserName" />
+                @if(Window.AvailableUsers.Count != 0)
+                {
+                    <UserHistory Messages=@Window.GetHistoryForUser(Window.RecipientName)
+                    UserName="@Window.CurrentUserName" />
+                }
+                else
+                {
+                    <h1>To start chat search for a user and type him</h1>
+                }
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col"></div>
         <div class="col-9" style="padding: 10px 10px 0 10px">
-            <SendMessagePage SendMessageHandler="@Window.SendMessageAsync" />
+            @if(Window.RecipientName != string.Empty && Window.AvailableUsers.Count != 0)
+            {
+                <SendMessagePage SendMessageHandler="@Window.SendMessageAsync" />
+            }
         </div>
     </div>
 </div>

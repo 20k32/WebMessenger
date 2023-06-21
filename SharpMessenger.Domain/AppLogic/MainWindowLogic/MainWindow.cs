@@ -32,7 +32,6 @@ namespace SharpMessenger.Domain.AppLogic
 
         public List<SearchedItemModel> AvailableUsers = new();
         public Dictionary<string, List<Message>> History = null!;
-        //public List<Message> MessagesWithParticularUser { get => GetHistoryForUser(RecipientName); } = new();
 
         public MainWindow(MainWindowComponentsManager manager)
         {
@@ -118,7 +117,9 @@ namespace SharpMessenger.Domain.AppLogic
             {
                 OnDeleteButtonClick(currentItem);
             }
+
             NotifyUserIterfaceStateChanged.Invoke();
+
             await Manager.SetUserFriendsAsync(UserFriends, CurrentUserName);
         }
 
@@ -193,8 +194,6 @@ namespace SharpMessenger.Domain.AppLogic
 
         public async Task SendMessageAsync(Message message)
         {
-            if (History == null!) { return; }
-
             SignMessage(message);
 
             History[RecipientName].Add(message);
