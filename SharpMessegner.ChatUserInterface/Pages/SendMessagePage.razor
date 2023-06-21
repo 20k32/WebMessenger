@@ -1,0 +1,26 @@
+﻿@using SharpMessenger.Domain.Messages;
+
+<div class="input-group">
+    <input class="form-control" @bind-value="@Data"/>
+    <button class="btn btn-primary" @onclick="@(async () => await SendMessageHandler.Invoke(new Message(Title, Data, SenderName, SendWhen, RecipientName)))">
+        send
+    </button>
+</div>
+
+@code 
+{
+    [Parameter]
+    public Func<Message, Task> SendMessageHandler { get; set; } = null!;
+
+    [Parameter]
+    public string SenderName { get; set; } = string.Empty;
+
+    [Parameter]
+    public string RecipientName { get; set; } = string.Empty;
+
+    public string SendWhen { get; set; } = DateTime.Now.ToShortTimeString();
+
+    public string Data { get; set; } = string.Empty;
+
+    public string Title = "~Message~";
+}

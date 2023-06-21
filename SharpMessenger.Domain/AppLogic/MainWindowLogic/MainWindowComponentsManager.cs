@@ -20,7 +20,7 @@ namespace SharpMessenger.Domain.AppLogic.MainWindowLogic
             return ClientSession.GetItemAsync<List<string>>(key);
         }
 
-        public ValueTask<Dictionary<string, List<Message>>> GetUserHistory(string key)
+        public ValueTask<Dictionary<string, List<Message>>> GetUserHistoryAsync(string key)
         {
             return ClientSession.GetItemAsync<Dictionary<string, List<Message>>>(key);
         }

@@ -1,34 +1,37 @@
 ﻿@using SharpMessegner.Domain.UIModels;
-@foreach (SearchedItemModel item in AvailableUsers)
+@using SharpMessenger.Domain.Messages;
+@using System.Runtime.CompilerServices;
+
+@if (Messages is not null)
 {
-    <div class="row justify-content-end">
-        <div class="alert alert-success" style="max-width:45%" role="alert">
-            <div class="row">
-                <div class="col-9" style="word-break:break-word">
-                    @item.UserData.UserName
+    @foreach (Message item in Messages)
+    {
+        <div class="row justify-content-end">
+            <div class="alert @(item.Sender.Equals(UserName) ? "alert-success" : "alert-danger")"
+                 style="max-width:45%" role="alert">
+                <div class="row text-center">
+                    @item.Title
                 </div>
-                <div class="col col align-self-end">
-                    23:59
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row justify-content-start">
-        <div class="alert alert-secondary" style="max-width:45%" role="alert">
-            <div class="row">
-                <div class="col-9" style="word-break:break-word">
-                    sadfasdfasdfasdffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-                </div>
-                <div class="col col align-self-end">
-                    23:59
+                <div class="row">
+                    <div class="col-9" style="word-break:break-word">
+                        @item.Data
+                    </div>
+                    <div class="col col align-self-end">
+                        @item.SendWhen
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    }
 }
+
 
 @code
 {
+
     [Parameter]
-    public List<SearchedItemModel> AvailableUsers { get; set; } = null!;
+    public List<Message>? Messages { get; set; } = null!;
+
+    [Parameter]
+    public string UserName { get; set; } = null!;
 }

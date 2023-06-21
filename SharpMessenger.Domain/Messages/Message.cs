@@ -6,12 +6,12 @@
         public string Data = null!;
         public string Sender = null!;
         public string Recipient = null!;
-        public DateTime SendWhen;
+        public string SendWhen = null!;
 
-        public Message() : this("default_title", "default_data", "default_sender", "default_recipient")
+        public Message() : this("default_title", "default_data", "default_sender", "default_recipient", DateTime.Now.ToShortTimeString())
         { }
 
-        public Message(string title, string data, string sender, string recipient) =>
-            (Title, Data, Sender, SendWhen, Recipient) = (title, data, sender, DateTime.Now, recipient);
+        public Message(string title, string data, string sender, string recipient, string sendWhen) =>
+            (Title, Data, Sender, SendWhen, Recipient) = (title, data, sender, sendWhen, recipient);
     }
 }

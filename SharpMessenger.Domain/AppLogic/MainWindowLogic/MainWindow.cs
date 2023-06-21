@@ -7,13 +7,14 @@ using SharpMessenger.Domain.AppLogic.MainWindowLogic;
 using SharpMessenger.Domain.Contracts;
 using SharpMessenger.Domain.Messages;
 using SharpMessenger.Domain.UiModels;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace SharpMessenger.Domain.AppLogic
 {
     public class MainWindow : IMainChatPage, IAddAndDeleteButton
     {
 
-        private string CurrentUserName = string.Empty;
         private string HistorySessionKey = null!;
 
         private List<string> UserFriends = new();
@@ -22,14 +23,16 @@ namespace SharpMessenger.Domain.AppLogic
         private MainWindowComponentsManager Manager = null!;
 
         public AuthenticationState AuthState = null!;
+        public Action NotifyUserIterfaceStateChanged = null!;
 
+        public string CurrentUserName = string.Empty;
         public string RecipientName = string.Empty;
         public string RowBackgroundColor = string.Empty;
         public string CursorStyle = string.Empty;
 
         public List<SearchedItemModel> AvailableUsers = new();
         public Dictionary<string, List<Message>> History = null!;
-        public Action NotifyUserIterfaceStateChanged = null!;
+        //public List<Message> MessagesWithParticularUser { get => GetHistoryForUser(RecipientName); } = new();
 
         public MainWindow(MainWindowComponentsManager manager)
         {
@@ -44,7 +47,12 @@ namespace SharpMessenger.Domain.AppLogic
             UserFriends = await Manager.GetUserFriendsAsync(CurrentUserName);
             
             HistorySessionKey = string.Concat(CurrentUserName, "_history");
-            History = await Manager.GetUserHistory(HistorySessionKey);
+
+            History = await Manager.GetUserHistoryAsync(HistorySessionKey) ?? new();
+            if(History.Count > 0)
+            {
+                var list = History[RecipientName];
+            }
 
             // get upcoming messages for every user
             AvailableUsers = UserFriends
@@ -55,15 +63,18 @@ namespace SharpMessenger.Domain.AppLogic
             // todo: init connection
         }
 
-        public virtual Task LoadHistoryAsync(ISearchedItem searchedItem)
+        public async Task LoadHistoryAsync(ISearchedItem searchedItem)
         {
             if (!string.Equals(searchedItem.Button.ButtonClass,
                     ButtonDefaults.ADD_BUTTON_CLASS))
             {
                 RecipientName = searchedItem.UserData.UserName;
             }
+
+            History = await Manager.GetUserHistoryAsync(HistorySessionKey);
+            var temItem = await Manager.GetUserFriendsAsync(CurrentUserName);
+
             NotifyUserIterfaceStateChanged.Invoke();
-            return Task.CompletedTask;
         }
 
         public Task InitConnection()
@@ -160,6 +171,48 @@ namespace SharpMessenger.Domain.AppLogic
                 RowBackgroundColor = "grey";
                 CursorStyle = "arrow";
             }
+            NotifyUserIterfaceStateChanged.Invoke();
+        }
+
+        public List<Message> GetHistoryForUser(string username)
+        {
+            if(History == null)
+            {
+                return null!;
+            }
+
+            ref List<Message> list = ref CollectionsMarshal.GetValueRefOrAddDefault(History, username, out bool extists)!;
+
+            if (!extists)
+            {
+                list = new();
+            }
+
+            return list;
+        }
+
+        private void SignMessage(Message message)
+        {
+            message.Sender = CurrentUserName;
+            message.Recipient = RecipientName;
+            message.SendWhen = DateTime.Now.ToShortTimeString();
+        }
+
+        public async Task SendMessageAsync(Message message)
+        {
+            if (History == null!) { return; }
+
+
+            SignMessage(message);
+
+            List<Message> tempHistory = History.GetValueOrDefault(RecipientName);
+
+            tempHistory.Add(message);
+
+            History[RecipientName] = tempHistory;
+
+            await Manager.SetUserHistory(History, HistorySessionKey);
+
             NotifyUserIterfaceStateChanged.Invoke();
         }
     }

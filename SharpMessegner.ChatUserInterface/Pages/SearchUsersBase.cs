@@ -26,7 +26,6 @@ namespace SharpMessegner.ChatUserInterface.Pages
 
         protected override async Task OnInitializedAsync()
         {
-            /*await OnWindowInitialized();*/
             Window = new(new SearchUsersWindowComponentsManager(State, Session, Client));
 
             await Window.OnWindowInitialized();
