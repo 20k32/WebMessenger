@@ -22,3 +22,6 @@ C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.Domain\obj\Deb
 C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.Domain\obj\Debug\net6.0\refint\SharpMessenger.Domain.dll
 C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.Domain\obj\Debug\net6.0\SharpMessenger.Domain.pdb
 C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.Domain\obj\Debug\net6.0\ref\SharpMessenger.Domain.dll
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.Domain\bin\Debug\net6.0\SharpMessenger.Presentation.Shared.dll
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.Domain\bin\Debug\net6.0\SharpMessenger.Presentation.Shared.pdb
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.Domain\obj\Debug\net6.0\SharpMessenger.Domain.csproj.CopyComplete

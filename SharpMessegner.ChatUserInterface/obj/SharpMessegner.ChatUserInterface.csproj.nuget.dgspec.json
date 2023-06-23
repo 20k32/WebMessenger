@@ -179,7 +179,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessenger.Presentation.Shared\\SharpMessenger.Presentation.Shared.csproj": {
+                "projectPath": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessenger.Presentation.Shared\\SharpMessenger.Presentation.Shared.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

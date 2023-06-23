@@ -1,12 +1,15 @@
 ﻿using Blazored.SessionStorage;
 using Microsoft.AspNetCore.Components.Authorization;
 using SharpMessanger.Domain.Clients;
+using SharpMessenger.Domain.AppLogic.Authentication;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.WebRequestMethods;
 
 namespace SharpMessenger.Domain.AppLogic.SearchWindowLogic
 {
@@ -35,7 +38,20 @@ namespace SharpMessenger.Domain.AppLogic.SearchWindowLogic
             return ClientSession.SetItemAsync<List<string>>(key, userFriends);
         }
 
-        public Task<IEnumerable<User>> GetClientsFromServer() =>
-            Client.GetFromJsonAsync<IEnumerable<User>>("api/Users/GetUserData/")!;
+        public async Task<IEnumerable<User>> GetClientsFromServer()
+        {
+            string token = await ((CustomAuthenticationStateProvider)StateProvider).GetToken();
+
+            IEnumerable<User> result = null!;
+
+            if (!string.IsNullOrWhiteSpace(token))
+            {
+                Client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", token);
+
+                result = await Client.GetFromJsonAsync<IEnumerable<User>>("/api/Users/GetUserData/");
+            }
+
+            return result;
+        }
     }
 }

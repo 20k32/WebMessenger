@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SharpMessanger.Domain.Clients;
 using SharpMessenger.DbInteraction.Repositories.Contracts;
 
@@ -15,6 +16,7 @@ namespace TestUsersApi.Controllers
         }
 
         [HttpGet("GetUserData")]
+        [Authorize(Roles = "user")]
         public IEnumerable<User> Get()
         {
             return UserRepository.GetUsers().Result;

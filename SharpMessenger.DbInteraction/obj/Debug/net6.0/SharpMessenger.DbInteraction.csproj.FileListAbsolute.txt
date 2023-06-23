@@ -28,3 +28,5 @@ C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.DbInteraction\
 C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.DbInteraction\obj\Debug\net6.0\refint\SharpMessenger.DbInteraction.dll
 C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.DbInteraction\obj\Debug\net6.0\SharpMessenger.DbInteraction.pdb
 C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.DbInteraction\obj\Debug\net6.0\ref\SharpMessenger.DbInteraction.dll
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.DbInteraction\bin\Debug\net6.0\SharpMessenger.Presentation.Shared.dll
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.DbInteraction\bin\Debug\net6.0\SharpMessenger.Presentation.Shared.pdb

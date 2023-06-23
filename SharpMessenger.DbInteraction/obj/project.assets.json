@@ -1007,13 +1007,24 @@
           "Microsoft.AspNetCore.Authentication.Cookies": "2.2.0",
           "Microsoft.AspNetCore.Authorization": "6.0.18",
           "Microsoft.AspNetCore.Components.Authorization": "6.0.18",
-          "Microsoft.AspNetCore.SignalR.Client": "8.0.0-preview.5.23302.2"
+          "Microsoft.AspNetCore.SignalR.Client": "8.0.0-preview.5.23302.2",
+          "SharpMessenger.Presentation.Shared": "1.0.0"
         },
         "compile": {
           "bin/placeholder/SharpMessenger.Domain.dll": {}
         },
         "runtime": {
           "bin/placeholder/SharpMessenger.Domain.dll": {}
+        }
+      },
+      "SharpMessenger.Presentation.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/SharpMessenger.Presentation.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SharpMessenger.Presentation.Shared.dll": {}
         }
       }
     }
@@ -2358,6 +2369,11 @@
       "type": "project",
       "path": "../SharpMessenger.Domain/SharpMessenger.Domain.csproj",
       "msbuildProject": "../SharpMessenger.Domain/SharpMessenger.Domain.csproj"
+    },
+    "SharpMessenger.Presentation.Shared/1.0.0": {
+      "type": "project",
+      "path": "../SharpMessenger.Presentation.Shared/SharpMessenger.Presentation.Shared.csproj",
+      "msbuildProject": "../SharpMessenger.Presentation.Shared/SharpMessenger.Presentation.Shared.csproj"
     }
   },
   "projectFileDependencyGroups": {

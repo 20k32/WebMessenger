@@ -3,7 +3,9 @@ using Microsoft.IdentityModel.Tokens;
 using SharpMessenger.DbInteraction;
 using SharpMessenger.UsersApi.Authentication;
 using SharpMessenger.UsersApi.Hubs;
+using SharpMessenger.UsersApi.Hubs.Interfaces;
 using System.Text;
+using Microsoft.AspNetCore.ResponseCompression;
 
 namespace TestUsersApi
 {
@@ -11,15 +13,8 @@ namespace TestUsersApi
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCors(setup => setup.AddPolicy("UI_Policy", policy =>
-            {
-                policy
-                    .AllowAnyOrigin()
-                    .AllowAnyHeader()
-                    .AllowAnyMethod();
-            }));
-
             services.AddControllers();
+            services.AddRazorPages();
 
             services.AddAuthentication(options =>
             {
@@ -38,6 +33,17 @@ namespace TestUsersApi
                 };
             });
 
+            services.AddAuthorizationCore();
+
+            services.AddCors(setup => setup.AddPolicy("UI_Policy", policy =>
+            {
+                policy
+                    .SetIsOriginAllowed(origin => true)
+                    .AllowAnyOrigin()
+                    .AllowAnyHeader()
+                    .AllowAnyMethod();
+            }));
+
             services.AddSignalR();
            
 
@@ -55,14 +61,17 @@ namespace TestUsersApi
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
+            app.UseStaticFiles();
+
             app.UseCors("UI_Policy");
 
             app.UseRouting();
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseAuthentication();
             app.UseAuthorization();
-
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute

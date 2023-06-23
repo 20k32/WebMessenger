@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.AspNetCore.Components.Authorization;
-using SharpMessegner.ChatUserInterface.Authentication;
 using Blazored.SessionStorage;
+using SharpMessenger.Domain.AppLogic.Authentication;
 
 namespace SharpMessegner.ChatUserInterface
 {

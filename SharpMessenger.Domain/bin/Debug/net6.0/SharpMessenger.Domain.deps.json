@@ -12,7 +12,8 @@
           "Microsoft.AspNetCore.Authentication.Cookies": "2.2.0",
           "Microsoft.AspNetCore.Authorization": "6.0.18",
           "Microsoft.AspNetCore.Components.Authorization": "6.0.18",
-          "Microsoft.AspNetCore.SignalR.Client": "8.0.0-preview.5.23302.2"
+          "Microsoft.AspNetCore.SignalR.Client": "8.0.0-preview.5.23302.2",
+          "SharpMessenger.Presentation.Shared": "1.0.0"
         },
         "runtime": {
           "SharpMessenger.Domain.dll": {}
@@ -625,6 +626,11 @@
             "fileVersion": "8.0.23.28008"
           }
         }
+      },
+      "SharpMessenger.Presentation.Shared/1.0.0": {
+        "runtime": {
+          "SharpMessenger.Presentation.Shared.dll": {}
+        }
       }
     }
   },
@@ -1032,6 +1038,11 @@
       "sha512": "sha512-iKBGQ+H0zV+jP0F72gTa+1DkecLA5yn18yQa9a/nWXZ4x6eKRwKaSmRRfwNtLTlz3cDoaIreTJDbMypEeix/gQ==",
       "path": "system.threading.channels/8.0.0-preview.5.23280.8",
       "hashPath": "system.threading.channels.8.0.0-preview.5.23280.8.nupkg.sha512"
+    },
+    "SharpMessenger.Presentation.Shared/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

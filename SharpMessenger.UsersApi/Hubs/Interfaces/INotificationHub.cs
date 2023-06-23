@@ -4,6 +4,6 @@ namespace SharpMessenger.UsersApi.Hubs.Interfaces
 {
     public interface INotificationHub
     {
-        Task SendMessageToUser(string userId, Message message);
+        Task SendMessageToUser(Message message);
     }
 }

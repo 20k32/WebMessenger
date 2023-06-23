@@ -12,7 +12,7 @@ using System.Runtime.InteropServices;
 
 namespace SharpMessenger.Domain.AppLogic
 {
-    public class MainWindow : IMainChatPage, IAddAndDeleteButton
+    public class MainWindow : IMainChatPage, IAddAndDeleteButton, IDisposable
     {
 
         private string HistorySessionKey = null!;
@@ -56,6 +56,7 @@ namespace SharpMessenger.Domain.AppLogic
             //---
 
             // todo: init connection
+            await InitConnection();
         }
 
         public async Task LoadHistoryAsync(ISearchedItem searchedItem)
@@ -69,36 +70,40 @@ namespace SharpMessenger.Domain.AppLogic
             NotifyUserIterfaceStateChanged.Invoke();
         }
 
-        public Task InitConnection()
+        public async Task InitConnection()
         {
             Connection = new HubConnectionBuilder()
-                 .WithUrl("https://localhost:7105/notification")
-                 .WithAutomaticReconnect()
-                 .Build();
+                   .WithUrl("https://localhost:7105/notification")
+                   .WithAutomaticReconnect()
+                   .Build();
 
             Connection.On<Message>("SendMessageToUser", BaseMessageHandler);
 
-            return Task.CompletedTask;
-        }
-
-        public void SetSendToUserEventHandler(Func<Message, Task> handler)
-        {
-            Connection.On<Message>("SendMessageToUser", handler);
+            await Connection.StartAsync();
         }
 
         public async Task BaseMessageHandler(Message message)
         {
-            if (UserFriends.Contains(message.Sender))
+            try
             {
-                if (!string.Equals(RecipientName, message.Sender))
+                /*if (!message.Recipient.Equals(RecipientName))
                 {
                     ComplexData userData = (AvailableUsers.Find(x => string.Equals(x.UserData.UserName, RecipientName))!.UserData as ComplexData)!;
                     userData.UnreadMessages++;
                 }
+
+                History[RecipientName].Add(message);
+
+                await Manager.SetUserHistory(History, HistorySessionKey);
+
+                NotifyUserIterfaceStateChanged.Invoke();*/
+                Console.WriteLine(message.Data);
             }
-            NotifyUserIterfaceStateChanged.Invoke();
-            History[RecipientName].Add(message);
-            await Manager.SetUserHistory(History, HistorySessionKey);
+            catch(Exception ex) 
+            {
+                Console.WriteLine(ex.Message);
+            }
+            
         }
 
         public int GetUnreadMessagesForUser(ISearchedItem user)
@@ -194,13 +199,16 @@ namespace SharpMessenger.Domain.AppLogic
 
         public async Task SendMessageAsync(Message message)
         {
-            SignMessage(message);
+            if (Connection is not null)
+            {
+                SignMessage(message);
+                await Connection.InvokeAsync("SendToUser", message);
+            }
+        }
 
-            History[RecipientName].Add(message);
-
-            await Manager.SetUserHistory(History, HistorySessionKey);
-
-            NotifyUserIterfaceStateChanged.Invoke();
+        public async void Dispose()
+        {
+            await Connection.DisposeAsync();
         }
     }
 }

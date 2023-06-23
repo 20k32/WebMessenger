@@ -125,3 +125,10 @@ C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.UsersApi\bin\D
 C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.UsersApi\bin\Debug\net6.0\System.Text.Json.dll
 C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.UsersApi\bin\Debug\net6.0\System.Threading.Channels.dll
 C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.UsersApi\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.UsersApi\bin\Debug\net6.0\BlazorDebugProxy\BrowserDebugHost.dll
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.UsersApi\bin\Debug\net6.0\BlazorDebugProxy\BrowserDebugHost.runtimeconfig.json
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.UsersApi\bin\Debug\net6.0\BlazorDebugProxy\BrowserDebugProxy.dll
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.UsersApi\bin\Debug\net6.0\BlazorDebugProxy\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.UsersApi\bin\Debug\net6.0\BlazorDebugProxy\Microsoft.CodeAnalysis.dll
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.UsersApi\bin\Debug\net6.0\BlazorDebugProxy\Newtonsoft.Json.dll
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.UsersApi\bin\Debug\net6.0\Microsoft.AspNetCore.Components.WebAssembly.Server.dll

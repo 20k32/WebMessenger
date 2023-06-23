@@ -201,6 +201,25 @@
           }
         }
       },
+      "Microsoft.AspNetCore.Components.WebAssembly.Server/6.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Microsoft.AspNetCore.Components.WebAssembly.Server.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.AspNetCore.Components.WebAssembly.Server.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ],
+        "build": {
+          "build/Microsoft.AspNetCore.Components.WebAssembly.Server.targets": {}
+        }
+      },
       "Microsoft.AspNetCore.Connections.Abstractions/8.0.0-preview.5.23302.2": {
         "type": "package",
         "dependencies": {
@@ -1288,7 +1307,8 @@
           "Microsoft.AspNetCore.Authentication.Cookies": "2.2.0",
           "Microsoft.AspNetCore.Authorization": "6.0.18",
           "Microsoft.AspNetCore.Components.Authorization": "6.0.18",
-          "Microsoft.AspNetCore.SignalR.Client": "8.0.0-preview.5.23302.2"
+          "Microsoft.AspNetCore.SignalR.Client": "8.0.0-preview.5.23302.2",
+          "SharpMessenger.Presentation.Shared": "1.0.0"
         },
         "compile": {
           "bin/placeholder/SharpMessenger.Domain.dll": {}
@@ -1484,6 +1504,29 @@
         "lib/net6.0/Microsoft.AspNetCore.Components.Web.xml",
         "microsoft.aspnetcore.components.web.6.0.12.nupkg.sha512",
         "microsoft.aspnetcore.components.web.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Components.WebAssembly.Server/6.0.2": {
+      "sha512": "GGRXrmLdayvUcKclH8jGPoAuRl9utuC6Ut2YlqYG6zJvugXw2HPz+wnmKNJviRO6Ck/yqZrtEXnHeXNeqy8vCg==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.components.webassembly.server/6.0.2",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.txt",
+        "build/Microsoft.AspNetCore.Components.WebAssembly.Server.targets",
+        "lib/net6.0/Microsoft.AspNetCore.Components.WebAssembly.Server.dll",
+        "lib/net6.0/Microsoft.AspNetCore.Components.WebAssembly.Server.xml",
+        "microsoft.aspnetcore.components.webassembly.server.6.0.2.nupkg.sha512",
+        "microsoft.aspnetcore.components.webassembly.server.nuspec",
+        "tools/BlazorDebugProxy/BrowserDebugHost.dll",
+        "tools/BlazorDebugProxy/BrowserDebugHost.runtimeconfig.json",
+        "tools/BlazorDebugProxy/BrowserDebugProxy.dll",
+        "tools/BlazorDebugProxy/Microsoft.CodeAnalysis.CSharp.dll",
+        "tools/BlazorDebugProxy/Microsoft.CodeAnalysis.dll",
+        "tools/BlazorDebugProxy/Newtonsoft.Json.dll"
       ]
     },
     "Microsoft.AspNetCore.Connections.Abstractions/8.0.0-preview.5.23302.2": {
@@ -3200,6 +3243,7 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 6.0.16",
+      "Microsoft.AspNetCore.Components.WebAssembly.Server >= 6.0.2",
       "SharpMessenger.DbInteraction >= 1.0.0",
       "SharpMessenger.Domain >= 1.0.0",
       "SharpMessenger.Presentation.Shared >= 1.0.0",
@@ -3260,6 +3304,10 @@
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",
             "version": "[6.0.16, )"
+          },
+          "Microsoft.AspNetCore.Components.WebAssembly.Server": {
+            "target": "Package",
+            "version": "[6.0.2, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",

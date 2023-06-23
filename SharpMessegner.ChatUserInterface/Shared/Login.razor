@@ -1,7 +1,7 @@
 ﻿@page "/login"
 @using Blazored.SessionStorage;
-@using SharpMessegner.ChatUserInterface.Authentication;
 @using SharpMessegner.Domain.UIModels;
+@using SharpMessenger.Domain.AppLogic.Authentication;
 @using SharpMessenger.Presentation.Shared;
 
 @inject ISessionStorageService Session
@@ -45,6 +45,7 @@
             string key = "@" + userSession!.UserName;
 
             List<string> item = await Session.GetItemAsync<List<string>>(key);
+
             if(item == null)
             {
                 await Session.SetItemAsync("@" + userSession!.UserName, new List<string>());

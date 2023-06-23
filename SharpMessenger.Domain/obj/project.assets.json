@@ -975,6 +975,16 @@
         "build": {
           "buildTransitive/net6.0/_._": {}
         }
+      },
+      "SharpMessenger.Presentation.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/SharpMessenger.Presentation.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SharpMessenger.Presentation.Shared.dll": {}
+        }
       }
     }
   },
@@ -2266,6 +2276,11 @@
         "system.threading.channels.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "SharpMessenger.Presentation.Shared/1.0.0": {
+      "type": "project",
+      "path": "../SharpMessenger.Presentation.Shared/SharpMessenger.Presentation.Shared.csproj",
+      "msbuildProject": "../SharpMessenger.Presentation.Shared/SharpMessenger.Presentation.Shared.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2274,7 +2289,8 @@
       "Microsoft.AspNetCore.Authentication.Cookies >= 2.2.0",
       "Microsoft.AspNetCore.Authorization >= 6.0.18",
       "Microsoft.AspNetCore.Components.Authorization >= 6.0.18",
-      "Microsoft.AspNetCore.SignalR.Client >= 8.0.0-preview.5.23302.2"
+      "Microsoft.AspNetCore.SignalR.Client >= 8.0.0-preview.5.23302.2",
+      "SharpMessenger.Presentation.Shared >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -2303,7 +2319,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessenger.Presentation.Shared\\SharpMessenger.Presentation.Shared.csproj": {
+              "projectPath": "C:\\Users\\egorm\\Desktop\\Repositories\\SharpMessenger\\SharpMessenger.Presentation.Shared\\SharpMessenger.Presentation.Shared.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

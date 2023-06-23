@@ -228,18 +228,18 @@
       "netstandard.dll": "sha256-8Ej3VOdrj8ijDcTS0\/1AEMpisaFDe3Nmj0Fbq5sfZEk=",
       "System.Private.CoreLib.dll": "sha256-tqFypIfntE2p16olQ2cI4rklqWNJqsPJvAoPSChg0H0=",
       "SharpMessenger.Application.dll": "sha256-Koor60iI2lHj8fX1p0wQ3lkZuCwjCUAtoSIkGc2hxQs=",
-      "SharpMessenger.Domain.dll": "sha256-ZXMloQ7xCH+aZb2pAK2CvfGDWmG4\/0yYOKZVqFUa+OQ=",
+      "SharpMessenger.Domain.dll": "sha256-Nfl7ssmnmsyIoHnZWlCVi5s8H1bkDiuBhuKAprYMdsw=",
       "SharpMessenger.Presentation.Shared.dll": "sha256-KwjPPQwAjziPSzGUxxRVGWYWOd1XtqYAdEyF6\/0+PQ8=",
-      "SharpMessegner.ChatUserInterface.dll": "sha256-2N\/Aok7myhUJil6Ea3GlCqf05+kO281SJRuDZ3i7ins="
+      "SharpMessegner.ChatUserInterface.dll": "sha256-lQ9YXVw2G4NU\/JAqeBLNmQ6j6Wrf\/TWw0\/2K+PavDCg="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
       "SharpMessenger.Application.pdb": "sha256-yvCftlEB98VENAKjdIjmg1zPRHfwA\/7rAgAwk\/Qe2gI=",
-      "SharpMessenger.Domain.pdb": "sha256-AvpsTpm8BMpC6EEffUA4VkuEezAAJiDeItEMc43y1dI=",
+      "SharpMessenger.Domain.pdb": "sha256-FtSkTFNAth2\/RVhpdoLhbGh1Z\/Vjsbp3QjFc4EycF\/s=",
       "SharpMessenger.Presentation.Shared.pdb": "sha256-6L1cxA1P1ySJck2iwSFSywcla5fFP0vIeIS1QP7BYqw=",
-      "SharpMessegner.ChatUserInterface.pdb": "sha256-enY0NL2P\/I9s3odl9nnXfDD9u1sOrwwQMjNbbEHH4tw="
+      "SharpMessegner.ChatUserInterface.pdb": "sha256-Cve\/IlIyyTy4la0qK144kcwZsnRSsUZ5TCrr4FWelro="
     },
     "runtime": {
       "dotnet.6.0.18.cj7xi80tko.js": "sha256-Iww31ANFa3KZuR4RkhiSYt3FJ7PKpMdeFNq3l3Td1h8=",

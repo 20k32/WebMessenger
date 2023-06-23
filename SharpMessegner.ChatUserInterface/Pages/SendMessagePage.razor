@@ -1,5 +1,8 @@
 ﻿@using SharpMessenger.Domain.Messages;
 
+@attribute [Authorize(Roles = "zxvc")]
+
+
 <div class="input-group">
     <input class="form-control" @bind-value="@Data"/>
     <button class="btn btn-primary" @onclick="@(async () => await SendMessageHandler.Invoke(new Message(Title, Data, SenderName, SendWhen, RecipientName)))">

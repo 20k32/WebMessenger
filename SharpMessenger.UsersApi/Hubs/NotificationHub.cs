@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.SignalR;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.SignalR;
 using SharpMessenger.Domain.Messages;
 using SharpMessenger.UsersApi.Hubs.Interfaces;
+using System.Security.Claims;
 
 namespace SharpMessenger.UsersApi.Hubs
 {
@@ -8,8 +10,23 @@ namespace SharpMessenger.UsersApi.Hubs
     {
         public async Task SendToUser(Message message)
         {
-            await Clients.Caller.SendMessageToUser("You", message);
-            await Clients.User(message.Recipient).SendMessageToUser(message.Sender, message);
+            // the user with id rep or @rep not exists in signalR !!!
+            // todo: solve
+            string rep = message.Recipient.Substring(1);
+            await Clients.Caller.SendMessageToUser(message);
+            try
+            {
+                var user1 =  Clients.User(message.Recipient);
+                var user2 = Clients.User(rep);
+                var client1 = Clients.Client(message.Recipient);
+                var client2 = Clients.Client(rep);
+               
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+           
         }
     }
 }
