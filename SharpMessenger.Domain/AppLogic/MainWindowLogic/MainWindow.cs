@@ -2,11 +2,14 @@
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel;
 using Microsoft.AspNetCore.SignalR.Client;
+using Microsoft.Extensions.Primitives;
 using SharpMessegner.Domain.UIModels;
+using SharpMessenger.Domain.AppLogic.Authentication;
 using SharpMessenger.Domain.AppLogic.MainWindowLogic;
 using SharpMessenger.Domain.Contracts;
 using SharpMessenger.Domain.Messages;
 using SharpMessenger.Domain.UiModels;
+using System.Net.Http.Headers;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -72,10 +75,24 @@ namespace SharpMessenger.Domain.AppLogic
 
         public async Task InitConnection()
         {
-            Connection = new HubConnectionBuilder()
-                   .WithUrl("https://localhost:7105/notification")
+            /*Connection = new HubConnectionBuilder()
+                   .WithUrl("https://localhost:7105/notification", options =>
+                   {
+                       options.AccessTokenProvider = async () => await Manager.CustomAuthenticationStateProvider.GetToken();
+                   })
                    .WithAutomaticReconnect()
-                   .Build();
+                   .Build();*/
+
+            string token = await Manager.CustomAuthenticationStateProvider.GetToken();
+
+            Connection = new HubConnectionBuilder()
+            .WithUrl($"https://localhost:7105/notification", options =>
+            {
+                options.Headers.Add("Authorization", new AuthenticationHeaderValue(
+                        "Bearer", token).ToString());
+            })
+            .WithAutomaticReconnect()
+            .Build();
 
             Connection.On<Message>("SendMessageToUser", BaseMessageHandler);
 
@@ -202,6 +219,8 @@ namespace SharpMessenger.Domain.AppLogic
             if (Connection is not null)
             {
                 SignMessage(message);
+
+                
                 await Connection.InvokeAsync("SendToUser", message);
             }
         }

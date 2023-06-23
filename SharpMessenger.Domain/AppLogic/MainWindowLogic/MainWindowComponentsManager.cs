@@ -1,5 +1,6 @@
 ﻿using Blazored.SessionStorage;
 using Microsoft.AspNetCore.Components.Authorization;
+using SharpMessenger.Domain.AppLogic.Authentication;
 using SharpMessenger.Domain.AppLogic.MainWindowLogic.MainWindowComponents;
 using SharpMessenger.Domain.Messages;
 
@@ -34,5 +35,8 @@ namespace SharpMessenger.Domain.AppLogic.MainWindowLogic
         {
             return ClientSession.SetItemAsync(key, history);
         }
+
+        public CustomAuthenticationStateProvider CustomAuthenticationStateProvider =>
+            (CustomAuthenticationStateProvider)StateProvider;
     }
 }

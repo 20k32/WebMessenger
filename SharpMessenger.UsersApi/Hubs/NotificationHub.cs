@@ -8,6 +8,7 @@ namespace SharpMessenger.UsersApi.Hubs
 {
     public class NotificationHub : Hub<INotificationHub>
     {
+        [Authorize]
         public async Task SendToUser(Message message)
         {
             // the user with id rep or @rep not exists in signalR !!!
