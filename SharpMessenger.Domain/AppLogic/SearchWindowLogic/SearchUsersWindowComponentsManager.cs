@@ -38,6 +38,7 @@ namespace SharpMessenger.Domain.AppLogic.SearchWindowLogic
             return ClientSession.SetItemAsync<List<string>>(key, userFriends);
         }
 
+        // BUG WAS HERE
         public async Task<IEnumerable<User>> GetClientsFromServer()
         {
             string token = await ((CustomAuthenticationStateProvider)StateProvider).GetToken();
@@ -46,6 +47,7 @@ namespace SharpMessenger.Domain.AppLogic.SearchWindowLogic
 
             if (!string.IsNullOrWhiteSpace(token))
             {
+                //USE THIS HEADERS WITH [AUTHROZIE] ATTRIBUTE ON SERVER!!!
                 Client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", token);
 
                 result = await Client.GetFromJsonAsync<IEnumerable<User>>("/api/Users/GetUserData/");

@@ -7,6 +7,7 @@ namespace TestUsersApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class UsersController : ControllerBase
     {
         private readonly IUserRepository UserRepository = null!;
@@ -16,7 +17,6 @@ namespace TestUsersApi.Controllers
         }
 
         [HttpGet("GetUserData")]
-        [Authorize(Roles = "user")]
         public IEnumerable<User> Get()
         {
             return UserRepository.GetUsers().Result;

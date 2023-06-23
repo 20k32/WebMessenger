@@ -8,22 +8,26 @@ namespace SharpMessenger.Domain.AppLogic.Authentication
 {
     public class CustomAuthenticationStateProvider : AuthenticationStateProvider
     {
-        private readonly ISessionStorageService _sessionStorage;
-        private ClaimsPrincipal _anonymous = new ClaimsPrincipal(new ClaimsIdentity());
+        private readonly ISessionStorageService SessionStorage;
+        private ClaimsPrincipal Anonymous = new ClaimsPrincipal(new ClaimsIdentity());
 
         public CustomAuthenticationStateProvider(ISessionStorageService sessionStorage)
         {
-            _sessionStorage = sessionStorage;
+            SessionStorage = sessionStorage;
         }
 
         public override async Task<AuthenticationState> GetAuthenticationStateAsync()
         {
             try
             {
-                var userSession = await _sessionStorage.ReadEncryptedItemAsync<UserSession>("UserSession");
+                UserSession userSession = await SessionStorage.ReadEncryptedItemAsync<UserSession>("UserSession");
+
                 if (userSession == null)
-                    return await Task.FromResult(new AuthenticationState(_anonymous));
-                var claimsPrincipal = new ClaimsPrincipal(new ClaimsIdentity(new List<Claim>
+                {
+                    return await Task.FromResult(new AuthenticationState(Anonymous));
+                }
+
+                ClaimsPrincipal claimsPrincipal = new(new ClaimsIdentity(new List<Claim>
                 {
                     new Claim(ClaimTypes.Name, userSession.UserName),
                     new Claim(ClaimTypes.Role, userSession.Role)
@@ -33,7 +37,7 @@ namespace SharpMessenger.Domain.AppLogic.Authentication
             }
             catch
             {
-                return await Task.FromResult(new AuthenticationState(_anonymous));
+                return await Task.FromResult(new AuthenticationState(Anonymous));
             }
         }
 
@@ -48,13 +52,14 @@ namespace SharpMessenger.Domain.AppLogic.Authentication
                     new Claim(ClaimTypes.Name, userSession.UserName),
                     new Claim(ClaimTypes.Role, userSession.Role)
                 }));
+
                 userSession.ExpiryTimeStamp = DateTime.Now.AddSeconds(userSession.ExpiresIn);
-                await _sessionStorage.SaveItemEncryptedAsync("UserSession", userSession);
+                await SessionStorage.SaveItemEncryptedAsync("UserSession", userSession);
             }
             else
             {
-                claimsPrincipal = _anonymous;
-                await _sessionStorage.RemoveItemAsync("UserSession");
+                claimsPrincipal = Anonymous;
+                await SessionStorage.RemoveItemAsync("UserSession");
             }
 
             NotifyAuthenticationStateChanged(Task.FromResult(new AuthenticationState(claimsPrincipal)));
@@ -62,11 +67,11 @@ namespace SharpMessenger.Domain.AppLogic.Authentication
 
         public async Task<string> GetToken()
         {
-            var result = string.Empty;
+            string result = string.Empty;
 
             try
             {
-                var userSession = await _sessionStorage.ReadEncryptedItemAsync<UserSession>("UserSession");
+                UserSession userSession = await SessionStorage.ReadEncryptedItemAsync<UserSession>("UserSession");
                 if (userSession != null && DateTime.Now < userSession.ExpiryTimeStamp)
                     result = userSession.Token;
             }
