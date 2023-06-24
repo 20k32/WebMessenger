@@ -50,7 +50,8 @@ namespace SharpMessenger.Domain.AppLogic.Authentication
                 claimsPrincipal = new ClaimsPrincipal(new ClaimsIdentity(new List<Claim>
                 {
                     new Claim(ClaimTypes.Name, userSession.UserName),
-                    new Claim(ClaimTypes.Role, userSession.Role)
+                    new Claim(ClaimTypes.Role, userSession.Role),
+                    new Claim(ClaimTypes.NameIdentifier, userSession.UserName)
                 }));
 
                 userSession.ExpiryTimeStamp = DateTime.Now.AddSeconds(userSession.ExpiresIn);

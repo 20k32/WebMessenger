@@ -15,18 +15,7 @@ namespace SharpMessenger.UsersApi.Hubs
             // todo: solve
             string rep = message.Recipient.Substring(1);
             await Clients.Caller.SendMessageToUser(message);
-            try
-            {
-                var user1 =  Clients.User(message.Recipient);
-                var user2 = Clients.User(rep);
-                var client1 = Clients.Client(message.Recipient);
-                var client2 = Clients.Client(rep);
-               
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            await Clients.User(rep).SendMessageToUser(message);
            
         }
     }

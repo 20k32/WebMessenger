@@ -46,6 +46,7 @@ namespace SharpMessenger.UsersApi.Authentication
             {
                 new(ClaimTypes.Name, userAccount.Name),
                 new(ClaimTypes.Role, userAccount.Role),
+                new(ClaimTypes.NameIdentifier, userAccount.Name)
             };
 
             var claimsIdentity = new ClaimsIdentity(claims);

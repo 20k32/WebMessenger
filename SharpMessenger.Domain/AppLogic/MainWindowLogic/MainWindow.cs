@@ -86,11 +86,7 @@ namespace SharpMessenger.Domain.AppLogic
             string token = await Manager.CustomAuthenticationStateProvider.GetToken();
 
             Connection = new HubConnectionBuilder()
-            .WithUrl($"https://localhost:7105/notification", options =>
-            {
-                options.Headers.Add("Authorization", new AuthenticationHeaderValue(
-                        "Bearer", token).ToString());
-            })
+            .WithUrl($"https://localhost:7105/notification?token={token}")
             .WithAutomaticReconnect()
             .Build();
 
@@ -101,9 +97,9 @@ namespace SharpMessenger.Domain.AppLogic
 
         public async Task BaseMessageHandler(Message message)
         {
-            try
+            /*try
             {
-                /*if (!message.Recipient.Equals(RecipientName))
+                if (!message.Recipient.Equals(RecipientName))
                 {
                     ComplexData userData = (AvailableUsers.Find(x => string.Equals(x.UserData.UserName, RecipientName))!.UserData as ComplexData)!;
                     userData.UnreadMessages++;
@@ -113,14 +109,13 @@ namespace SharpMessenger.Domain.AppLogic
 
                 await Manager.SetUserHistory(History, HistorySessionKey);
 
-                NotifyUserIterfaceStateChanged.Invoke();*/
-                Console.WriteLine(message.Data);
+                NotifyUserIterfaceStateChanged.Invoke();
             }
             catch(Exception ex) 
             {
                 Console.WriteLine(ex.Message);
-            }
-            
+            }*/
+            Console.WriteLine(message.Data);
         }
 
         public int GetUnreadMessagesForUser(ISearchedItem user)

@@ -31,6 +31,20 @@ namespace TestUsersApi
                     ValidateIssuer = false,
                     ValidateAudience = false
                 };
+                options.Events = new JwtBearerEvents()
+                { 
+                    OnMessageReceived = context =>
+                    {
+                        var accessToken = context.Request.Query["token"];
+                        if(!string.IsNullOrWhiteSpace(accessToken)
+                            && context.Request.Path.StartsWithSegments("/notification"))
+                        {
+                            context.Token = accessToken;
+                        }
+
+                        return Task.CompletedTask;
+                    }
+                };
             });
 
             services.AddAuthorizationCore();
@@ -39,9 +53,9 @@ namespace TestUsersApi
             {
                 policy
                     .SetIsOriginAllowed(origin => true)
-                    .AllowAnyOrigin()
                     .AllowAnyHeader()
-                    .AllowAnyMethod();
+                    .AllowAnyMethod()
+                    .AllowCredentials();
             }));
 
             services.AddSignalR();
