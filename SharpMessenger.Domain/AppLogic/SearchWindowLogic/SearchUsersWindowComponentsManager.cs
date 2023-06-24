@@ -2,18 +2,12 @@
 using Microsoft.AspNetCore.Components.Authorization;
 using SharpMessanger.Domain.Clients;
 using SharpMessenger.Domain.AppLogic.Authentication;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Net.WebRequestMethods;
 
 namespace SharpMessenger.Domain.AppLogic.SearchWindowLogic
 {
-    public class SearchUsersWindowComponentsManager : ApplicationComopentsBase, ISearchUsersWindowComponents
+    internal sealed class SearchUsersWindowComponentsManager : ApplicationComopentsBase, ISearchUsersWindowComponents
     {
         private HttpClient Client = null!;
 

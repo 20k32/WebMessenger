@@ -1,6 +1,6 @@
 ﻿namespace SharpMessenger.Domain.Contracts
 {
-    public interface IInitializeConnection
+    internal interface IInitializeConnection
     {
         Task InitConnection();
     }

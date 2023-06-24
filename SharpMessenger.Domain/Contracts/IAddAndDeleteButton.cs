@@ -1,6 +1,6 @@
 ﻿namespace SharpMessenger.Domain.Contracts
 {
-    public interface IAddAndDeleteButton
+    internal interface IAddAndDeleteButton
     {
         void OnAddButtonClick(ISearchedItem button);
         void OnDeleteButtonClick(ISearchedItem button);

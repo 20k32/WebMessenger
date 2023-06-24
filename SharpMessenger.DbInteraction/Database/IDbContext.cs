@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SharpMessenger.DbInteraction.Database
 {
-    public interface IDbContext
+    internal interface IDbContext
     { 
         ICollection<User> Users { get; set; }
     }

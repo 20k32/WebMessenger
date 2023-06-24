@@ -2,7 +2,7 @@
 
 namespace SharpMessenger.DbInteraction.Database
 {
-    public class ListDbContext : IDbContext
+    internal class ListDbContext : IDbContext
     {
         public ICollection<User> Users { get; set; }
 

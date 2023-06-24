@@ -19,4 +19,8 @@
     <ProjectReference Include="..\SharpMessenger.Domain\SharpMessenger.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <InternalsVisibleTo Include="SharpMessenger.UsersApi" />
+  </ItemGroup>
+
 </Project>

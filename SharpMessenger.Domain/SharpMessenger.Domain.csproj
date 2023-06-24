@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -12,6 +12,18 @@
     <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="6.0.18" />
     <PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="6.0.18" />
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="8.0.0-preview.5.23302.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="SharpMessegner.ChatUserInterface" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="SharpMessenger.DbInteraction"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="SharpMessenger.UsersApi"/>
   </ItemGroup>
 
   <ItemGroup>

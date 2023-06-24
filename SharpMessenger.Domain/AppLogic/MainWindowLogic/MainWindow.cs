@@ -13,9 +13,11 @@ using System.Net.Http.Headers;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+/*[assembly: InternalsVisibleTo("SharpMessegner.ChatUserInterface")]*/
 namespace SharpMessenger.Domain.AppLogic
 {
-    public class MainWindow : IMainChatPage, IAddAndDeleteButton, IDisposable
+    
+    internal sealed class MainWindow : IMainChatPage, IAddAndDeleteButton, IDisposable
     {
 
         private string HistorySessionKey = null!;
@@ -97,25 +99,17 @@ namespace SharpMessenger.Domain.AppLogic
 
         public async Task BaseMessageHandler(Message message)
         {
-            /*try
+            if (!message.Recipient.Equals(RecipientName))
             {
-                if (!message.Recipient.Equals(RecipientName))
-                {
-                    ComplexData userData = (AvailableUsers.Find(x => string.Equals(x.UserData.UserName, RecipientName))!.UserData as ComplexData)!;
-                    userData.UnreadMessages++;
-                }
-
-                History[RecipientName].Add(message);
-
-                await Manager.SetUserHistory(History, HistorySessionKey);
-
-                NotifyUserIterfaceStateChanged.Invoke();
+                ComplexData userData = (AvailableUsers.Find(x => string.Equals(x.UserData.UserName, RecipientName))!.UserData as ComplexData)!;
+                userData.UnreadMessages++;
             }
-            catch(Exception ex) 
-            {
-                Console.WriteLine(ex.Message);
-            }*/
-            Console.WriteLine(message.Data);
+
+            History[RecipientName].Add(message);
+
+            await Manager.SetUserHistory(History, HistorySessionKey);
+
+            NotifyUserIterfaceStateChanged.Invoke();
         }
 
         public int GetUnreadMessagesForUser(ISearchedItem user)

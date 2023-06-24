@@ -2,7 +2,7 @@
 
 namespace SharpMessenger.Domain.AppLogic.ComponentsContracts
 {
-    public interface IGetAuthState
+    internal interface IGetAuthState
     {
         Task<AuthenticationState> GetAuthenticationStateAsync();
     }

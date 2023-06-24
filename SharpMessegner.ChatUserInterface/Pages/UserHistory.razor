@@ -2,22 +2,44 @@
 {
     @foreach (Message item in Messages)
     {
-        <div class="row justify-content-end">
-            <div class="alert @(item.Sender.Equals(UserName) ? "alert-success" : "alert-danger")"
-                 style="max-width:45%" role="alert">
-                <div class="row text-center">
-                    @item.Title
-                </div>
-                <div class="row">
-                    <div class="col-9" style="word-break:break-word">
-                        @item.Data
+        if (item.Sender.Equals(UserName))
+        {
+            <div class="row justify-content-end">
+                <div class="alert alert-success"
+                     style="max-width:45%" role="alert">
+                    <div class="row text-center">
+                        @item.Title
                     </div>
-                    <div class="col col align-self-end">
-                        @item.SendWhen
+                    <div class="row">
+                        <div class="col-9" style="word-break:break-word">
+                            @item.Data
+                        </div>
+                        <div class="col col align-self-end">
+                            @item.SendWhen
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        }
+        else
+        {
+            <div class="row justify-content-start">
+                <div class="alert alert-danger"
+                     style="max-width:45%" role="alert">
+                    <div class="row text-center">
+                        @item.Title
+                    </div>
+                    <div class="row">
+                        <div class="col-9" style="word-break:break-word">
+                            @item.Data
+                        </div>
+                        <div class="col col align-self-end">
+                            @item.SendWhen
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
     }
 }
 

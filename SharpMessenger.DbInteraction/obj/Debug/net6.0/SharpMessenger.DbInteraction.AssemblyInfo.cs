@@ -18,6 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyProductAttribute("SharpMessenger.DbInteraction")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SharpMessenger.DbInteraction")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("SharpMessenger.UsersApi")]
 
 // Создано классом WriteCodeFragment MSBuild.
 

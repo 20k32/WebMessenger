@@ -2,6 +2,6 @@
 
 namespace SharpMessenger.Domain.AppLogic.SearchWindowLogic
 {
-    public interface ISearchUsersWindowComponents : IGetAuthState, IUserFriendsList
+    internal interface ISearchUsersWindowComponents : IGetAuthState, IUserFriendsList
     { }
 }

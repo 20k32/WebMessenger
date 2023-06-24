@@ -4,7 +4,7 @@ using SharpMessenger.DbInteraction.Repositories.Contracts;
 
 namespace SharpMessenger.DbInteraction.Repositories
 {
-    public class UserRepository : IUserRepository
+    internal class UserRepository : IUserRepository
     {
         IDbContext CurrentDbContext = null!;
         public UserRepository(IDbContext context)

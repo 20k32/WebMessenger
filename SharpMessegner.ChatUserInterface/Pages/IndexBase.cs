@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
 using SharpMessenger.Domain.AppLogic;
 using SharpMessenger.Domain.AppLogic.MainWindowLogic;
-
+using System.Runtime.CompilerServices;
 
 namespace SharpMessegner.ChatUserInterface.Pages
 {
@@ -15,7 +15,7 @@ namespace SharpMessegner.ChatUserInterface.Pages
         [Inject]
         private AuthenticationStateProvider State { get; set; } = null!;
 
-        public MainWindow Window = null!;
+        internal MainWindow Window = null!;
 
         protected override async Task OnInitializedAsync()
         {

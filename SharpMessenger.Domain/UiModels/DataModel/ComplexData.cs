@@ -1,6 +1,6 @@
 ﻿namespace SharpMessenger.Domain.UiModels
 {
-    public class ComplexData : Data
+    public sealed class ComplexData : Data
     {
         public int UnreadMessages { get; set; }
         public override string UserName { get; set; }

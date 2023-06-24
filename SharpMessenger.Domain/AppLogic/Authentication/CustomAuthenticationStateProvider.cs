@@ -6,7 +6,7 @@ using System.Security.Claims;
 
 namespace SharpMessenger.Domain.AppLogic.Authentication
 {
-    public class CustomAuthenticationStateProvider : AuthenticationStateProvider
+    internal sealed class CustomAuthenticationStateProvider : AuthenticationStateProvider
     {
         private readonly ISessionStorageService SessionStorage;
         private ClaimsPrincipal Anonymous = new ClaimsPrincipal(new ClaimsIdentity());

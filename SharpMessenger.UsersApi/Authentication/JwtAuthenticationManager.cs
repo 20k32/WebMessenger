@@ -8,7 +8,7 @@ using System.Text;
 
 namespace SharpMessenger.UsersApi.Authentication
 {
-    public class JwtAuthenticationManager
+    internal class JwtAuthenticationManager
     {
         public const string JWT_SECURITY_KEY = "supersecret_test_security_key!342";
         private const int JWT_TOKEN_VALIDITY_MINUTES = 20;

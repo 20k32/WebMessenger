@@ -9,7 +9,7 @@ using System.Net.Http.Json;
 
 namespace SharpMessenger.Domain.AppLogic.SearchWindowLogic
 {
-    public class SearchUsersWindow : ISearchUserPage
+    internal sealed class SearchUsersWindow : ISearchUserPage
     {
         private SearchUsersWindowComponentsManager Manager = null!;
         private string CurrentUserName = null!;

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SharpMessenger.Domain.AppLogic
 {
-    public class ApplicationComopentsBase
+    internal class ApplicationComopentsBase
     {
         protected AuthenticationStateProvider StateProvider = null!;
         protected ISessionStorageService ClientSession = null!;

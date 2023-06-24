@@ -6,7 +6,7 @@ using SharpMessenger.Domain.Messages;
 
 namespace SharpMessenger.Domain.AppLogic.MainWindowLogic
 {
-    public class MainWindowComponentsManager : ApplicationComopentsBase, IMainWindowComponents
+    internal sealed class MainWindowComponentsManager : ApplicationComopentsBase, IMainWindowComponents
     {
         public MainWindowComponentsManager(AuthenticationStateProvider provider, ISessionStorageService service) : base(provider, service)
         { }

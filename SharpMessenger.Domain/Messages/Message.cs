@@ -1,6 +1,6 @@
 ﻿namespace SharpMessenger.Domain.Messages
 {
-    public class Message
+    public sealed class Message
     {
         public string Title { get; set; } = null!;
         public string Data { get; set; } = null!;

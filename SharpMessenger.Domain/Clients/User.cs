@@ -1,6 +1,8 @@
-﻿namespace SharpMessanger.Domain.Clients
+﻿using System.Runtime.CompilerServices;
+
+namespace SharpMessanger.Domain.Clients
 {
-    public class User : Client
+    public sealed class User : Client
     {
         public string UserNameReference { get; set; } = null!;
 

@@ -22,7 +22,7 @@ namespace SharpMessegner.ChatUserInterface.Pages
         [Inject]
         private HttpClient Client { get; set; } = null!;
 
-        public SearchUsersWindow Window = null!;
+        internal SearchUsersWindow Window = null!;
 
         protected override async Task OnInitializedAsync()
         {

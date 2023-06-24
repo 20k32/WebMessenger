@@ -1,6 +1,6 @@
 ﻿namespace SharpMessenger.Domain.UiModels
 {
-    public class PlainStringData : Data
+    internal sealed class PlainStringData : Data
     {
         public override string UserName { get; set; }
 

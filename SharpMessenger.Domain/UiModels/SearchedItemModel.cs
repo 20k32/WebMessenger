@@ -3,7 +3,7 @@ using SharpMessenger.Domain.UiModels;
 
 namespace SharpMessegner.Domain.UIModels
 {
-    public class SearchedItemModel : ISearchedItem
+    public sealed class SearchedItemModel : ISearchedItem
     {
         public Button Button { get; set; }
         public Data UserData { get; set; }

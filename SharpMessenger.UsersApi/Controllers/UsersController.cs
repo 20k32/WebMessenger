@@ -3,14 +3,14 @@ using Microsoft.AspNetCore.Mvc;
 using SharpMessanger.Domain.Clients;
 using SharpMessenger.DbInteraction.Repositories.Contracts;
 
-namespace TestUsersApi.Controllers
+namespace SharpMessenger.UsersApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
     [Authorize]
     public class UsersController : ControllerBase
     {
-        private readonly IUserRepository UserRepository = null!;
+        public readonly IUserRepository UserRepository = null!;
         public UsersController(IUserRepository userRepository)
         {
             UserRepository = userRepository;
