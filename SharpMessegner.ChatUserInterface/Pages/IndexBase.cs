@@ -29,6 +29,7 @@ namespace SharpMessegner.ChatUserInterface.Pages
         public void Dispose()
         {
             Window.NotifyUserIterfaceStateChanged -= StateHasChanged;
+            Window.Dispose();
         }
     }
 }

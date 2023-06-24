@@ -214,8 +214,6 @@ namespace SharpMessenger.Domain.AppLogic
             if (Connection is not null)
             {
                 SignMessage(message);
-
-                
                 await Connection.InvokeAsync("SendToUser", message);
             }
         }

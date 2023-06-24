@@ -11,10 +11,11 @@ namespace SharpMessenger.UsersApi.Hubs
         [Authorize]
         public async Task SendToUser(Message message)
         {
-            // the user with id rep or @rep not exists in signalR !!!
-            // todo: solve
+            // this code sends three messages : 1 for sender, 2 for recip,
+            // todo: fix
             string rep = message.Recipient.Substring(1);
             await Clients.Caller.SendMessageToUser(message);
+            var user = Clients.User(rep);
             await Clients.User(rep).SendMessageToUser(message);
            
         }
