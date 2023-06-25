@@ -22,7 +22,6 @@ namespace SharpMessegner.ChatUserInterface.Pages
             Window = new(new MainWindowComponentsManager(State, Session));
 
             Window.NotifyUserIterfaceStateChanged += StateHasChanged;
-
             await Window.OnWindowInitialized();
         }
 

@@ -33,7 +33,7 @@ namespace SharpMessenger.Domain.AppLogic
 
         public List<SearchedItemModel> AvailableUsers = new();
         public Dictionary<string, List<Message>> History = null!;
-
+        public List<Message> Messages = new();
 
         public MainWindow(MainWindowComponentsManager manager)
         {
@@ -65,6 +65,8 @@ namespace SharpMessenger.Domain.AppLogic
             {
                 RecipientName = searchedItem.UserData.UserName;
                 ((ComplexData)searchedItem.UserData).UnreadMessages = 0;
+
+                Messages = GetHistoryForUser(RecipientName);
             }
             NotifyUserIterfaceStateChanged.Invoke();
         }
@@ -99,6 +101,9 @@ namespace SharpMessenger.Domain.AppLogic
                 ComplexData userData = (AvailableUsers.Find(x => string.Equals(x.UserData.UserName, message.Sender))!.UserData as ComplexData)!;
                 userData.UnreadMessages++;
                 NotifyUserIterfaceStateChanged.Invoke();
+
+                string sender = message.Sender;
+                string rep = message.Recipient;
 
                 History[message.Sender].Add(message);
                 await Manager.SetUserHistory(History);
@@ -176,6 +181,12 @@ namespace SharpMessenger.Domain.AppLogic
                 RowBackgroundColor = "grey";
                 CursorStyle = "arrow";
             }
+
+            // this cause re-render of userhistory.razor page
+            // due to re-render, this cause invokation of method gethistoryforuser
+            // because it is passing by parameter to userhistory.razor page
+
+            // todo: fix bug
             NotifyUserIterfaceStateChanged.Invoke();
         }
 
