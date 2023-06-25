@@ -22,14 +22,14 @@ namespace SharpMessenger.Domain.AppLogic.SearchWindowLogic
             return StateProvider.GetAuthenticationStateAsync();
         }
 
-        public ValueTask<List<string>> GetUserFriendsAsync(string key)
+        public ValueTask<List<string>> GetUserFriendsAsync()
         {
-            return ClientSession.GetItemAsync<List<string>>(key);
+            return ClientSession.GetItemAsync<List<string>>(UserName);
         }
 
-        public ValueTask SetUserFriendsAsync(List<string> userFriends, string key)
+        public ValueTask SetUserFriendsAsync(List<string> userFriends)
         {
-            return ClientSession.SetItemAsync<List<string>>(key, userFriends);
+            return ClientSession.SetItemAsync<List<string>>(UserName, userFriends);
         }
 
         // BUG WAS HERE

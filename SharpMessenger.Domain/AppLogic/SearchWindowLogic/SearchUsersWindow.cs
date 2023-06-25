@@ -12,12 +12,10 @@ namespace SharpMessenger.Domain.AppLogic.SearchWindowLogic
     internal sealed class SearchUsersWindow : ISearchUserPage
     {
         private SearchUsersWindowComponentsManager Manager = null!;
-        private string CurrentUserName = null!;
 
         public List<string> UserFriends = null!;
         public string SearchOptions = string.Empty;
         public SearchedItemModel[] SearchedData = Array.Empty<SearchedItemModel>();
-        public AuthenticationState AuthState = null!;
 
         public SearchUsersWindow(SearchUsersWindowComponentsManager manager) =>
             Manager = manager;
@@ -28,7 +26,7 @@ namespace SharpMessenger.Domain.AppLogic.SearchWindowLogic
             IEnumerable<User> users = await Manager.GetClientsFromServer() ?? Array.Empty<User>();
 
             SearchedData = users
-              .Where(x => x.UserNameReference.Contains(SearchOptions) && !string.Equals(x.UserNameReference, CurrentUserName))
+              .Where(x => x.UserNameReference.Contains(SearchOptions) && !string.Equals(x.Name, Manager.UserName))
               .Select(x => UserFriends.Contains(x.UserNameReference)
                            ? new SearchedItemModel(new PlainStringData(x.UserNameReference), ButtonDefaults.CreateDeleteButton())
                            : new SearchedItemModel(new PlainStringData(x.UserNameReference), ButtonDefaults.CreateAddButton()))
@@ -47,7 +45,7 @@ namespace SharpMessenger.Domain.AppLogic.SearchWindowLogic
                 OnDeleteButtonClick(currentItem);
             }
 
-            await Manager.SetUserFriendsAsync(UserFriends, CurrentUserName);
+            await Manager.SetUserFriendsAsync(UserFriends);
         }
 
         public void OnAddButtonClick(ISearchedItem currentItem)
@@ -64,9 +62,8 @@ namespace SharpMessenger.Domain.AppLogic.SearchWindowLogic
 
         public async Task OnWindowInitialized()
         {
-            AuthState = await Manager.GetAuthenticationStateAsync();
-            CurrentUserName = string.Concat("@", AuthState.User.Identity!.Name);
-            UserFriends = await Manager.GetUserFriendsAsync(CurrentUserName);
+            await Manager.InitializeFields();
+            UserFriends = await Manager.GetUserFriendsAsync() ?? new();
         }
     }
 }

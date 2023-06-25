@@ -19,9 +19,6 @@ namespace SharpMessenger.Domain.AppLogic
     
     internal sealed class MainWindow : IMainChatPage, IAddAndDeleteButton, IDisposable
     {
-
-        private string HistorySessionKey = null!;
-
         private List<string> UserFriends = new();
 
         private HubConnection Connection = null!;
@@ -30,13 +27,14 @@ namespace SharpMessenger.Domain.AppLogic
         public AuthenticationState AuthState = null!;
         public Action NotifyUserIterfaceStateChanged = null!;
 
-        public string CurrentUserName = string.Empty;
+        public string CurrentUserName => Manager.UserName;
         public string RecipientName = string.Empty;
         public string RowBackgroundColor = string.Empty;
         public string CursorStyle = string.Empty;
 
         public List<SearchedItemModel> AvailableUsers = new();
         public Dictionary<string, List<Message>> History = null!;
+
 
         public MainWindow(MainWindowComponentsManager manager)
         {
@@ -45,14 +43,11 @@ namespace SharpMessenger.Domain.AppLogic
 
         public async Task OnWindowInitialized()
         {
-            AuthState = await Manager.GetAuthenticationStateAsync();
+            await Manager.InitializeFields();
 
-            CurrentUserName = string.Concat("@", AuthState.User.Identity!.Name);
-            UserFriends = await Manager.GetUserFriendsAsync(CurrentUserName);
-            
-            HistorySessionKey = string.Concat(CurrentUserName, "_history");
+            UserFriends = await Manager.GetUserFriendsAsync() ?? new();
 
-            History = await Manager.GetUserHistoryAsync(HistorySessionKey) ?? new();
+            History = await Manager.GetUserHistoryAsync() ?? new();
 
             // get upcoming messages for every user
             AvailableUsers = UserFriends
@@ -111,9 +106,8 @@ namespace SharpMessenger.Domain.AppLogic
             {
                 History[RecipientName].Add(message);
             }
-            
 
-            await Manager.SetUserHistory(History, HistorySessionKey);
+            await Manager.SetUserHistory(History);
 
             NotifyUserIterfaceStateChanged.Invoke();
         }
@@ -137,7 +131,7 @@ namespace SharpMessenger.Domain.AppLogic
 
             NotifyUserIterfaceStateChanged.Invoke();
 
-            await Manager.SetUserFriendsAsync(UserFriends, CurrentUserName);
+            await Manager.SetUserFriendsAsync(UserFriends);
         }
 
         private void RemoveFromAvailableUsersList(string name)
