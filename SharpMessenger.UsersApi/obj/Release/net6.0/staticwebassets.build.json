@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "pt7EJJixMhVj0EueBMzJURe60LjOhDPGzhaQ7K0FSsw=",
+  "Source": "SharpMessenger.UsersApi",
+  "BasePath": "_content/SharpMessenger.UsersApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

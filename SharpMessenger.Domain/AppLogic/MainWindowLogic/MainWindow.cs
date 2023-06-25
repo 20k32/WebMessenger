@@ -23,9 +23,8 @@ namespace SharpMessenger.Domain.AppLogic
 
         private HubConnection Connection = null!;
         private MainWindowComponentsManager Manager = null!;
-
-        public AuthenticationState AuthState = null!;
         public Action NotifyUserIterfaceStateChanged = null!;
+        private static object lockObj = new();
 
         public string CurrentUserName => Manager.UserName;
         public string RecipientName = string.Empty;
@@ -67,7 +66,6 @@ namespace SharpMessenger.Domain.AppLogic
                 RecipientName = searchedItem.UserData.UserName;
                 ((ComplexData)searchedItem.UserData).UnreadMessages = 0;
             }
-
             NotifyUserIterfaceStateChanged.Invoke();
         }
 
@@ -100,16 +98,18 @@ namespace SharpMessenger.Domain.AppLogic
             {
                 ComplexData userData = (AvailableUsers.Find(x => string.Equals(x.UserData.UserName, message.Sender))!.UserData as ComplexData)!;
                 userData.UnreadMessages++;
+                NotifyUserIterfaceStateChanged.Invoke();
+
                 History[message.Sender].Add(message);
+                await Manager.SetUserHistory(History);
             }
             else
             {
                 History[RecipientName].Add(message);
+                await Manager.SetUserHistory(History);
+
+                NotifyUserIterfaceStateChanged.Invoke();
             }
-
-            await Manager.SetUserHistory(History);
-
-            NotifyUserIterfaceStateChanged.Invoke();
         }
 
         public int GetUnreadMessagesForUser(ISearchedItem user)

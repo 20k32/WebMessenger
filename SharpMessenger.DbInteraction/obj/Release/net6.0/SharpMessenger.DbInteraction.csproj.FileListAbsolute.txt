@@ -1,0 +1,17 @@
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.DbInteraction\bin\Release\net6.0\SharpMessenger.DbInteraction.deps.json
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.DbInteraction\bin\Release\net6.0\SharpMessenger.DbInteraction.dll
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.DbInteraction\bin\Release\net6.0\SharpMessenger.DbInteraction.pdb
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.DbInteraction\bin\Release\net6.0\SharpMessenger.Domain.dll
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.DbInteraction\bin\Release\net6.0\SharpMessenger.Presentation.Shared.dll
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.DbInteraction\bin\Release\net6.0\SharpMessenger.Domain.pdb
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.DbInteraction\bin\Release\net6.0\SharpMessenger.Presentation.Shared.pdb
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.DbInteraction\obj\Release\net6.0\SharpMessenger.DbInteraction.csproj.AssemblyReference.cache
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.DbInteraction\obj\Release\net6.0\SharpMessenger.DbInteraction.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.DbInteraction\obj\Release\net6.0\SharpMessenger.DbInteraction.AssemblyInfoInputs.cache
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.DbInteraction\obj\Release\net6.0\SharpMessenger.DbInteraction.AssemblyInfo.cs
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.DbInteraction\obj\Release\net6.0\SharpMessenger.DbInteraction.csproj.CoreCompileInputs.cache
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.DbInteraction\obj\Release\net6.0\SharpMessenger.DbInteraction.csproj.CopyComplete
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.DbInteraction\obj\Release\net6.0\SharpMessenger.DbInteraction.dll
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.DbInteraction\obj\Release\net6.0\refint\SharpMessenger.DbInteraction.dll
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.DbInteraction\obj\Release\net6.0\SharpMessenger.DbInteraction.pdb
+C:\Users\egorm\Desktop\Repositories\SharpMessenger\SharpMessenger.DbInteraction\obj\Release\net6.0\ref\SharpMessenger.DbInteraction.dll

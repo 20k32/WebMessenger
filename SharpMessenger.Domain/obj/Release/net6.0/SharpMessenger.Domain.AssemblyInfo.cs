@@ -18,6 +18,9 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyProductAttribute("SharpMessenger.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SharpMessenger.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("SharpMessegner.ChatUserInterface")]
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("SharpMessenger.DbInteraction")]
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("SharpMessenger.UsersApi")]
 
 // Создано классом WriteCodeFragment MSBuild.
 

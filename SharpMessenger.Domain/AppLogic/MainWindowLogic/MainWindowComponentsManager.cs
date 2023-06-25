@@ -47,6 +47,12 @@ namespace SharpMessenger.Domain.AppLogic.MainWindowLogic
             return ClientSession.SetItemAsync(HistorySessionKey, history);
         }
 
+        public ValueTask SetUserHistoryForUser(string userName, Dictionary<string, List<Message>> history)
+            => ClientSession.SetItemAsync(userName, history);
+
+        public ValueTask<Dictionary<string, List<Message>>> GetHistoryForUser(string userName) =>
+            ClientSession.GetItemAsync<Dictionary<string, List<Message>>>(userName);
+
         public async ValueTask<List<SearchedItemModel>> GetOrSetAvaliableUsersAsync(List<SearchedItemModel> avaliableUsersToSet)
         {
             var item = await ClientSession.GetItemAsync<List<SearchedItemModel>>(AvaliableUsersSessionKey);

@@ -21,7 +21,8 @@ namespace SharpMessenger.Domain.AppLogic
 
         public virtual async ValueTask InitializeFields()
         {
-            UserName = (await StateProvider.GetAuthenticationStateAsync()).User.Identity!.Name!;
+            string plainName = (await StateProvider.GetAuthenticationStateAsync()).User.Identity!.Name!;
+            UserName = string.Concat("@", plainName);
             AvaliableUsersSessionKey = string.Concat(UserName, "_avaliableUsers");
 
             string.Intern(UserName);

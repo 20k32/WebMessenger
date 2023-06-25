@@ -26,7 +26,7 @@ namespace SharpMessenger.Domain.AppLogic.SearchWindowLogic
             IEnumerable<User> users = await Manager.GetClientsFromServer() ?? Array.Empty<User>();
 
             SearchedData = users
-              .Where(x => x.UserNameReference.Contains(SearchOptions) && !string.Equals(x.Name, Manager.UserName))
+              .Where(x => x.UserNameReference.Contains(SearchOptions) && !string.Equals(x.UserNameReference, Manager.UserName))
               .Select(x => UserFriends.Contains(x.UserNameReference)
                            ? new SearchedItemModel(new PlainStringData(x.UserNameReference), ButtonDefaults.CreateDeleteButton())
                            : new SearchedItemModel(new PlainStringData(x.UserNameReference), ButtonDefaults.CreateAddButton()))
