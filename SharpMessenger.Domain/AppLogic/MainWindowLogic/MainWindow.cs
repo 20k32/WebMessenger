@@ -70,6 +70,7 @@ namespace SharpMessenger.Domain.AppLogic
                     ButtonDefaults.ADD_BUTTON_CLASS))
             {
                 RecipientName = searchedItem.UserData.UserName;
+                ((ComplexData)searchedItem.UserData).UnreadMessages = 0;
             }
 
             NotifyUserIterfaceStateChanged.Invoke();
@@ -99,13 +100,18 @@ namespace SharpMessenger.Domain.AppLogic
 
         public async Task BaseMessageHandler(Message message)
         {
-            if (!message.Recipient.Equals(RecipientName))
+            if (!message.Sender.Equals(CurrentUserName)
+                && !message.Sender.Equals(RecipientName))
             {
-                ComplexData userData = (AvailableUsers.Find(x => string.Equals(x.UserData.UserName, RecipientName))!.UserData as ComplexData)!;
+                ComplexData userData = (AvailableUsers.Find(x => string.Equals(x.UserData.UserName, message.Sender))!.UserData as ComplexData)!;
                 userData.UnreadMessages++;
+                History[message.Sender].Add(message);
             }
-
-            History[RecipientName].Add(message);
+            else
+            {
+                History[RecipientName].Add(message);
+            }
+            
 
             await Manager.SetUserHistory(History, HistorySessionKey);
 

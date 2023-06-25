@@ -11,10 +11,9 @@ namespace SharpMessenger.UsersApi.Hubs
         [Authorize]
         public async Task SendToUser(Message message)
         {
-            string rep = message.Recipient.Substring(1);
+            string recipient = message.Recipient.Substring(1);
             await Clients.Caller.SendMessageToUser(message);
-            var user = Clients.User(rep);
-            await Clients.User(rep).SendMessageToUser(message);
+            await Clients.User(recipient).SendMessageToUser(message);
            
         }
     }
