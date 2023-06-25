@@ -16,7 +16,7 @@ using System.Runtime.InteropServices;
 /*[assembly: InternalsVisibleTo("SharpMessegner.ChatUserInterface")]*/
 namespace SharpMessenger.Domain.AppLogic
 {
-    
+
     internal sealed class MainWindow : IMainChatPage, IAddAndDeleteButton, IDisposable
     {
         private List<string> UserFriends = new();
@@ -102,10 +102,10 @@ namespace SharpMessenger.Domain.AppLogic
                 userData.UnreadMessages++;
                 NotifyUserIterfaceStateChanged.Invoke();
 
-                string sender = message.Sender;
-                string rep = message.Recipient;
+                var tempList = GetHistoryForUser(message.Sender);
+                tempList.Add(message);
+                History[message.Sender] = tempList;
 
-                History[message.Sender].Add(message);
                 await Manager.SetUserHistory(History);
             }
             else
@@ -182,17 +182,12 @@ namespace SharpMessenger.Domain.AppLogic
                 CursorStyle = "arrow";
             }
 
-            // this cause re-render of userhistory.razor page
-            // due to re-render, this cause invokation of method gethistoryforuser
-            // because it is passing by parameter to userhistory.razor page
-
-            // todo: fix bug
             NotifyUserIterfaceStateChanged.Invoke();
         }
 
         public List<Message> GetHistoryForUser(string username)
         {
-            if(History == null)
+            if (History == null)
             {
                 return null!;
             }
