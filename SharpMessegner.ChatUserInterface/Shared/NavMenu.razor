@@ -1,7 +1,7 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">SharpMessegner.ChatUserInterface</a>
-        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+﻿<div class="top-row navbar navbar-dark">
+    <div class="container-fluid d-flex justify-content-center align-items-center">
+       @* <a class="navbar-brand" href=""><span class="oi oi-oi:spreadsheet" aria-hidden="true"></span>WebMessenger</a>*@
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 8 8"><path fill="white" d="M.75 0C.34 0 0 .34 0 .75v5.5c0 .41.34.75.75.75h6.5c.41 0 .75-.34.75-.75V.75C8 .34 7.66 0 7.25 0H.75zM1 1h1v1H1V1zm2 0h4v1H3V1zM1 3h1v1H1V3zm2 0h4v1H3V3zM1 5h1v1H1V5zm2 0h4v1H3V5z" /></svg>        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
     </div>
@@ -16,7 +16,7 @@
         </div>
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="SearchUsers" Match="NavLinkMatch.All">
-                <span class="oi oi-home" aria-hidden="true"></span> SearchUsers
+                <span class="oi oi-magnifying-glass" aria-hidden="true"></span> Search for users
             </NavLink>
         </div>
     </nav>
