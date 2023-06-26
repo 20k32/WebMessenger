@@ -88,7 +88,8 @@
         <div class="col-9" style="padding: 10px 10px 0 10px">
             @if (Window.RecipientName != string.Empty && Window.AvailableUsers.Count != 0)
             {
-                <SendMessagePage SendMessageHandler="@Window.SendMessageAsync" />
+                <SendMessagePage SendMessageHandler="@Window.SendMessageAsync"
+                                 RecipientName="@Window.RecipientName"/>
             }
         </div>
     </div>

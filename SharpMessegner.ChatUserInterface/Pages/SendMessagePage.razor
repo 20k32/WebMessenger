@@ -2,8 +2,8 @@
 
 
 <div class="input-group">
-    <input class="form-control" @bind-value="@Data"/>
-    <button class="btn btn-primary" @onclick="@(async () => await SendMessageHandler.Invoke(new Message(Title, Data, SenderName, SendWhen, RecipientName)))">
+    <input class="form-control" @bind-value="@Data" placeholder="write message to @RecipientName" />
+    <button class="btn btn-primary" @onclick="@(async () => await SendMessageHandleWrapper())">
         send
     </button>
 </div>
@@ -14,9 +14,6 @@
     public Func<Message, Task> SendMessageHandler { get; set; } = null!;
 
     [Parameter]
-    public string SenderName { get; set; } = string.Empty;
-
-    [Parameter]
     public string RecipientName { get; set; } = string.Empty;
 
     public string SendWhen { get; set; } = DateTime.Now.ToShortTimeString();
@@ -24,4 +21,13 @@
     public string Data { get; set; } = string.Empty;
 
     public string Title = "~Message~";
+
+    private async Task SendMessageHandleWrapper()
+    {
+        if (!string.IsNullOrWhiteSpace(Data))
+        {
+            await SendMessageHandler.Invoke(new Message(Title, Data, string.Empty, SendWhen, string.Empty));
+            Data = string.Empty;
+        }
+    }
 }
