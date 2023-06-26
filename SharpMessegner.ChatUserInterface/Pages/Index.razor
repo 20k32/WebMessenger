@@ -15,64 +15,73 @@
                                  RowBackgroundColor="@Window.RowBackgroundColor"
                                  CursorStyle="@Window.CursorStyle" />
         </div>
-        <div class="col-9" style="background-color:antiquewhite;height:700px;overflow-y:auto;padding:5px">
+        <div class="col-9 d-flex justify-content-center align-items-center" style="background-color:antiquewhite;height:700px;overflow-y:auto;padding:5px">
             <div class="container">
-                @if(Window.AvailableUsers.Count != 0)
+                @if (Window.AvailableUsers.Count != 0)
                 {
-                   @* <UserHistory Messages=@Window.GetHistoryForUser(Window.RecipientName)
-                    UserName="@Window.CurrentUserName" />*@
-                    @if (Window.Messages is not null)
+                    if (Window.RecipientName != string.Empty)
                     {
-                        @foreach (Message item in Window.Messages)
+                        @if (Window.Messages is not null
+                       && Window.Messages.Count != 0)
                         {
-                            if (item.Sender.Equals(Window.CurrentUserName))
+                            @foreach (Message item in Window.Messages)
                             {
-                                <div class="row justify-content-end">
-                                    <div class="alert alert-success"
-                                         style="max-width:45%" role="alert">
-                                        <div class="row text-center">
-                                            @item.Title
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-9" style="word-break:break-word">
-                                                @item.Data
-                                            </div>
-                                            <div class="col col align-self-end">
-                                                @item.SendWhen
+                                if (item.Sender.Equals(Window.CurrentUserName))
+                                {
+                                    <div class="row justify-content-end">
+                                        <div class="alert alert-success"
+                                             style="max-width:45%" role="alert">
+                                            <div class="row justify-content-center">
+                                                <div class="col-9" style="word-break:break-word">
+                                                    @item.Data
+                                                </div>
+                                                <div class="col col align-self-end">
+                                                    @item.SendWhen
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            }
-                            else
-                            {
-                                <div class="row justify-content-start">
-                                    <div class="alert alert-danger"
-                                         style="max-width:45%" role="alert">
-                                        <div class="row text-center">
-                                            @item.Title
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-9" style="word-break:break-word">
-                                                @item.Data
+                                }
+                                else
+                                {
+                                    <div class="row justify-content-start">
+                                        <div class="alert alert-danger"
+                                             style="max-width:45%" role="alert">
+                                            <div class="row text-center">
+                                                @item.Title
                                             </div>
-                                            <div class="col col align-self-end">
-                                                @item.SendWhen
+                                            <div class="row">
+                                                <div class="col-9" style="word-break:break-word">
+                                                    @item.Data
+                                                </div>
+                                                <div class="col col align-self-end">
+                                                    @item.SendWhen
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                }
                             }
+                        }
+                        else
+                        {
+                            <div>
+                                <h3>There is no messages with this user</h3>
+                            </div>
                         }
                     }
                     else
                     {
-                        <h1>there is no messages with this user</h1>
+                        <div>
+                            <h3>Tap user you want to chat with</h3>
+                        </div>
                     }
                 }
                 else
                 {
-                    <h1>To start chat search for a user and type him</h1>
+                    <div>
+                        <h3>To start chat search for a user</h3>
+                    </div>
                 }
             </div>
         </div>
@@ -80,7 +89,7 @@
     <div class="row">
         <div class="col"></div>
         <div class="col-9" style="padding: 10px 10px 0 10px">
-            @if(Window.RecipientName != string.Empty && Window.AvailableUsers.Count != 0)
+            @if (Window.RecipientName != string.Empty && Window.AvailableUsers.Count != 0)
             {
                 <SendMessagePage SendMessageHandler="@Window.SendMessageAsync" />
             }
