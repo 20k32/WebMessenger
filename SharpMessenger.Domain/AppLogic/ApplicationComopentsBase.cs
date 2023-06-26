@@ -1,10 +1,8 @@
 ﻿using Blazored.SessionStorage;
 using Microsoft.AspNetCore.Components.Authorization;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using SharpMessegner.Domain.UIModels;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace SharpMessenger.Domain.AppLogic
 {
@@ -18,6 +16,16 @@ namespace SharpMessenger.Domain.AppLogic
 
         public ApplicationComopentsBase(AuthenticationStateProvider provider, ISessionStorageService service) =>
             (StateProvider, ClientSession) = (provider, service);
+
+        public ValueTask<List<SearchedItemModel>> GetAvaliableUsersAsync()
+        {
+            return ClientSession.GetItemAsync<List<SearchedItemModel>>(AvaliableUsersSessionKey);
+        }
+
+        public ValueTask SetAvaliableUsersAsync(List<SearchedItemModel> avaliableUsersToSet)
+        {
+            return ClientSession.SetItemAsync(AvaliableUsersSessionKey, avaliableUsersToSet);
+        }
 
         public virtual async ValueTask InitializeFields()
         {

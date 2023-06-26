@@ -16,7 +16,6 @@ namespace SharpMessenger.DbInteraction
 
         public static IServiceCollection AddInteractionWithApplicationDatabase(this IServiceCollection services, IConfiguration configuratio) 
         {
-            // todo: connectionstring, configure properly
             return null!;
         }
 

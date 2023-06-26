@@ -4,6 +4,7 @@ using SharpMessegner.Domain.UIModels;
 using SharpMessenger.Domain.AppLogic.Authentication;
 using SharpMessenger.Domain.AppLogic.MainWindowLogic.MainWindowComponents;
 using SharpMessenger.Domain.Messages;
+using System.Collections.Generic;
 
 namespace SharpMessenger.Domain.AppLogic.MainWindowLogic
 {
@@ -52,19 +53,6 @@ namespace SharpMessenger.Domain.AppLogic.MainWindowLogic
 
         public ValueTask<Dictionary<string, List<Message>>> GetHistoryForUser(string userName) =>
             ClientSession.GetItemAsync<Dictionary<string, List<Message>>>(userName);
-
-        public async ValueTask<List<SearchedItemModel>> GetOrSetAvaliableUsersAsync(List<SearchedItemModel> avaliableUsersToSet)
-        {
-            var item = await ClientSession.GetItemAsync<List<SearchedItemModel>>(AvaliableUsersSessionKey);
-
-            if (item is null)
-            {
-                await ClientSession.SetItemAsync(AvaliableUsersSessionKey, avaliableUsersToSet);
-                return await Task.FromResult(avaliableUsersToSet);
-            }
-
-            return await Task.FromResult(item);
-        }
 
         public CustomAuthenticationStateProvider CustomAuthenticationStateProvider =>
             (CustomAuthenticationStateProvider)StateProvider;

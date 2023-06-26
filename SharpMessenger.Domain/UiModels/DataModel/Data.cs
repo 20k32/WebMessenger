@@ -1,7 +1,15 @@
-﻿namespace SharpMessenger.Domain.UiModels
+﻿using System.Text.Json.Serialization;
+
+namespace SharpMessenger.Domain.UiModels
 {
-    public abstract class Data
+    [JsonDerivedType(typeof(Data), typeDiscriminator: "base")]
+    [JsonDerivedType(typeof(ComplexData), typeDiscriminator: "complex")]
+    public class Data
     {
-        public abstract string UserName { get; set; }
+        public string UserName { get; set; } = null!;
+
+        // for serialization purpose only
+        public Data()
+        { }
     }
 }

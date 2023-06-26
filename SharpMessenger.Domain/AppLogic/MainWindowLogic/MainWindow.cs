@@ -1,19 +1,12 @@
-﻿using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Authorization;
-using Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel;
-using Microsoft.AspNetCore.SignalR.Client;
-using Microsoft.Extensions.Primitives;
+﻿using Microsoft.AspNetCore.SignalR.Client;
 using SharpMessegner.Domain.UIModels;
-using SharpMessenger.Domain.AppLogic.Authentication;
 using SharpMessenger.Domain.AppLogic.MainWindowLogic;
 using SharpMessenger.Domain.Contracts;
 using SharpMessenger.Domain.Messages;
 using SharpMessenger.Domain.UiModels;
-using System.Net.Http.Headers;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-/*[assembly: InternalsVisibleTo("SharpMessegner.ChatUserInterface")]*/
+
 namespace SharpMessenger.Domain.AppLogic
 {
 
@@ -24,7 +17,6 @@ namespace SharpMessenger.Domain.AppLogic
         private HubConnection Connection = null!;
         private MainWindowComponentsManager Manager = null!;
         public Action NotifyUserIterfaceStateChanged = null!;
-        private static object lockObj = new();
 
         public string CurrentUserName => Manager.UserName;
         public string RecipientName = string.Empty;
@@ -48,13 +40,8 @@ namespace SharpMessenger.Domain.AppLogic
 
             History = await Manager.GetUserHistoryAsync() ?? new();
 
-            // get upcoming messages for every user
-            AvailableUsers = UserFriends
-                .Select(x => new SearchedItemModel(new ComplexData(x, default(int)), ButtonDefaults.CreateDeleteButton()))
-                .ToList();
-            //---
+            AvailableUsers = await Manager.GetAvaliableUsersAsync() ?? new();
 
-            // todo: init connection
             await InitConnection();
         }
 
@@ -73,16 +60,9 @@ namespace SharpMessenger.Domain.AppLogic
 
         public async Task InitConnection()
         {
-            /*Connection = new HubConnectionBuilder()
-                   .WithUrl("https://localhost:7105/notification", options =>
-                   {
-                       options.AccessTokenProvider = async () => await Manager.CustomAuthenticationStateProvider.GetToken();
-                   })
-                   .WithAutomaticReconnect()
-                   .Build();*/
-
             string token = await Manager.CustomAuthenticationStateProvider.GetToken();
 
+            // todo: store connection in session storage to get upcoming messages even not on the main chat page on site
             Connection = new HubConnectionBuilder()
             .WithUrl($"https://localhost:7105/notification?token={token}")
             .WithAutomaticReconnect()
@@ -119,7 +99,7 @@ namespace SharpMessenger.Domain.AppLogic
 
         public int GetUnreadMessagesForUser(ISearchedItem user)
         {
-            return (user.UserData as ComplexData)!.UnreadMessages;
+            return ((ComplexData)user.UserData).UnreadMessages;
         }
 
         public async Task OnAddDeleteButtonClick(ISearchedItem currentItem)
@@ -137,6 +117,7 @@ namespace SharpMessenger.Domain.AppLogic
             NotifyUserIterfaceStateChanged.Invoke();
 
             await Manager.SetUserFriendsAsync(UserFriends);
+            await Manager.SetAvaliableUsersAsync(AvailableUsers);
         }
 
         private void RemoveFromAvailableUsersList(string name)
@@ -220,6 +201,7 @@ namespace SharpMessenger.Domain.AppLogic
 
         public async void Dispose()
         {
+            await Manager.SetAvaliableUsersAsync(AvailableUsers);
             await Connection.DisposeAsync();
         }
     }

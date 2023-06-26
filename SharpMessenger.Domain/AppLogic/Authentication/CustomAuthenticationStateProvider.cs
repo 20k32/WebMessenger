@@ -16,7 +16,7 @@ namespace SharpMessenger.Domain.AppLogic.Authentication
             SessionStorage = sessionStorage;
         }
 
-        public override async Task<AuthenticationState> GetAuthenticationStateAsync()
+        public override async Task<AuthenticationState> GetAuthenticationStateAsync() 
         {
             try
             {

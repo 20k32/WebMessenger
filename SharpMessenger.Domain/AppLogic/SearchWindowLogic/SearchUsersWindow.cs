@@ -12,6 +12,7 @@ namespace SharpMessenger.Domain.AppLogic.SearchWindowLogic
     internal sealed class SearchUsersWindow : ISearchUserPage
     {
         private SearchUsersWindowComponentsManager Manager = null!;
+        private List<SearchedItemModel> AvaliableUsers = null!;
 
         public List<string> UserFriends = null!;
         public string SearchOptions = string.Empty;
@@ -46,24 +47,31 @@ namespace SharpMessenger.Domain.AppLogic.SearchWindowLogic
             }
 
             await Manager.SetUserFriendsAsync(UserFriends);
+            await Manager.SetAvaliableUsersAsync(AvaliableUsers);
         }
 
         public void OnAddButtonClick(ISearchedItem currentItem)
         {
             currentItem.Button = ButtonDefaults.CreateDeleteButton();
             UserFriends.Add(currentItem.UserData.UserName);
+            var newUser = new SearchedItemModel(new ComplexData(currentItem.UserData.UserName, default(int)), currentItem.Button);
+            AvaliableUsers.Add(newUser);
         }
 
         public void OnDeleteButtonClick(ISearchedItem currentItem)
         {
             currentItem.Button = ButtonDefaults.CreateAddButton();
+
             UserFriends.Remove(currentItem.UserData.UserName);
+            var currentUser = AvaliableUsers.Find(x => x.UserData.UserName.Equals(currentItem.UserData.UserName))!;
+            AvaliableUsers.Remove(currentUser);
         }
 
         public async Task OnWindowInitialized()
         {
             await Manager.InitializeFields();
             UserFriends = await Manager.GetUserFriendsAsync() ?? new();
+            AvaliableUsers = await Manager.GetAvaliableUsersAsync() ?? new();
         }
     }
 }
